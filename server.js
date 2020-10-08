@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-var db = require("./models");
+var db = require("./oModels");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
