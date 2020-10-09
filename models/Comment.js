@@ -18,7 +18,7 @@ module.exports = function (sequelize, DataTypes) {
     };
 
     Comment.associate = function(models) {
-      Calendar.hasMany(models.Calendar, {
+      Comment.hasMany(models.Calendar, {
       });
     };
   
