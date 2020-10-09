@@ -8,8 +8,8 @@ export default function () {
           <p id="title">CollabCal</p>
         </div>
         <div class="userInfo col-md-2">
+          <p id="username">Jill Adams</p>
           <div id="circle"></div>
-          <p id="username">@JillAdams</p>
         </div>
       </div>
     </header>
