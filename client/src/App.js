@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import ReactDOM from "react-dom";
 import Nav from "./components/nav";
 import logo from "./logo.svg";
@@ -11,14 +12,13 @@ import Acct from "./pages/createAcct";
 class App extends Component {
   render() {
     return (
-      <Router>
+      <BrowserRouter>
         <Nav />
-        <Route exact path="/" component={About} />
         <Route exact path="/calendar" component={Calendar} />
-        <Route exact path="/login" component={LogIn} />
+        <Route exact path="/" component={LogIn} />
         <Route exact path="/group" component={Group} />
         <Route exact path="/accounts" component={Acct} />
-      </Router>
+      </BrowserRouter>
     );
   }
 }
