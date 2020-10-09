@@ -17,6 +17,9 @@ module.exports = function(sequelize, DataTypes) {
 
     Calendar.associate = function(models) {
         Calendar.hasMany(models.Event, {
+          foreignKey: {
+            allowNull: false
+          }
         });
       };
 
