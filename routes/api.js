@@ -13,7 +13,7 @@
 var db = require('../models');
 module.exports = function(app) {
   // Get route for returning events of a specific Calendar
-  app.get('/api/posts/calendar/:calendar', function(req, res) {
+  app.get('/api/calendar/:calendar', function(req, res) {
     db.Calendar.findAll({
       where: {
         type: req.params.calendar
