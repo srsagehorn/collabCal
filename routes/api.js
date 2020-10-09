@@ -14,10 +14,12 @@ var db = require('../models');
 module.exports = function(app) {
   // Get route for returning events of a specific Calendar
   app.get('/api/calendar/:calendar', function(req, res) {
+    console.log(req.params.calendar)
     db.Calendar.findAll({
       where: {
         type: req.params.calendar
-      }
+      },
+      include: [db.Event]
     })
       .then(function(dbEvent) {
         res.json(dbEvent);
