@@ -14,10 +14,10 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Nav />
-        <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/" component={LogIn} />
+        <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/group" component={Group} />
-        <Route exact path="/accounts" component={Acct} />
+        <Route exact path="/newaccount" component={Acct} />
       </BrowserRouter>
     );
   }
