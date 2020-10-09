@@ -1,0 +1,108 @@
+body {
+  background-color: rgb(52, 52, 52);
+  color: white;
+  font-family: nobel, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#title {
+  font-size: 60px;
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+.userInfo {
+  text-align: right;
+  padding-right: 40px;
+  padding-top: 20px;
+}
+
+#username {
+  display: inline;
+}
+
+#circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: rgb(254, 245, 0);
+  display: inline-block;
+  margin-right: 4px;
+  position: relative;
+  top: 4px;
+}
+
+.cal {
+  margin-top: 20px;
+  height: 800px;
+  width: 95%;
+  border: rgb(159, 159, 159) solid 1px;
+  border-radius: 10px;
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 7px 6px 12px -10px rgba(107, 107, 107, 0.84);
+}
+
+.sideBox {
+  margin-top: 20px;
+  height: 800px;
+  width: 95%;
+  border: rgb(159, 159, 159) solid 1px;
+  border-radius: 10px;
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 7px 6px 12px -10px rgba(107, 107, 107, 0.84);
+}
+
+#login {
+  margin-top: 100px;
+  padding: 70px;
+  border: rgb(159, 159, 159) solid 1px;
+  border-radius: 10px;
+  box-shadow: 7px 6px 12px -10px rgba(107, 107, 107, 0.84);
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#loginBtn {
+  background-color: rgb(43, 213, 213);
+  padding: 10px;
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+#createBtn {
+  background-color: rgb(168, 107, 255);
+  padding: 10px;
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+input {
+  background-color: rgb(52, 52, 52) !important;
+  border: none !important;
+  border-bottom: rgb(159, 159, 159) solid 1px !important;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+#plus {
+  font-weight: 800;
+  font-size: 24px;
+  color: black;
+}
+
+.add {
+  background-color: rgb(0, 255, 0);
+  border-radius: 10px;
+  height: 35px;
+  width: 40px;
+}
