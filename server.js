@@ -4,6 +4,9 @@ var db = require("./models");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 // const connection = mysql.createConnection({
 //   host: "localhost",
 //   user: "root",
@@ -18,7 +21,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // api calls go here!!
-require ("./routes/api")(app)
+require("./routes/api")(app)
 
 // Send every request to the React app
 // Define any API routes before this runs

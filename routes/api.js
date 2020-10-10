@@ -27,7 +27,7 @@ module.exports = function(app) {
   });
   // Get route for retrieving a single event
   app.get('/api/event/:id', function(req, res) {
-    db.Post.findOne({
+    db.Event.findOne({
       where: {
         id: req.params.id
       }
@@ -38,11 +38,11 @@ module.exports = function(app) {
   });
   // POST route for saving a new event
   app.post('/api/event', function(req, res) {
-    console.log(req.body);
-    db.Event.create({
-      event: req.body.title,
-      eventDate: req.body.date,
-    })
+    // console.log('checking if im here', req, res);
+    db.Event.create(
+      req.body
+
+    )
       .then(function(dbEvent) {
         res.json(dbEvent);
       });
@@ -51,7 +51,7 @@ module.exports = function(app) {
   app.post('/api/comment', function(req, res) {
     console.log(req.body);
     db.Comment.create({
-      comment: req.body.title,
+      comment: req.body.comment,
       userName: req.user,
     })
       .then(function(dbEvent) {
