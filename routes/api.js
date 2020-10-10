@@ -41,7 +41,6 @@ module.exports = function(app) {
     // console.log('checking if im here', req, res);
     db.Event.create(
       req.body
-
     )
       .then(function(dbEvent) {
         res.json(dbEvent);
