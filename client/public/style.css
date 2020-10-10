@@ -101,10 +101,10 @@ h1 {
 }
 
 input {
-  background-color: #0d1821 !important;
+  background-color: white;
   border: none !important;
   border-bottom: rgb(159, 159, 159) solid 1px !important;
-  color: white !important;
+  color: black !important;
 }
 
 input:hover {

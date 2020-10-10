@@ -49,10 +49,6 @@ function CalendarPage() {
           style={{ height: "100vh" }}
         />
       </div>
-      <div>
-        <Cal />
-        <SideBox />
-      </div>
     );
 };
 export default CalendarPage
