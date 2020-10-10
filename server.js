@@ -18,6 +18,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // api calls go here!!
+require ("./routes/api")(app)
 
 // Send every request to the React app
 // Define any API routes before this runs
@@ -25,10 +26,6 @@ app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.use(passport.initialize());
-app.use(passport.session());
-
-db.sequelize.sync({ force: true }).then(function () {
   app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
