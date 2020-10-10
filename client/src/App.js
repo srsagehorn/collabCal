@@ -8,6 +8,7 @@ import LogIn from "./pages/logIn";
 import Group from "./pages/createGroup";
 import Acct from "./pages/createAcct";
 import SignUp from "./pages/signUp/signup";
+import "./style.css";
 
 class App extends Component {
   render() {

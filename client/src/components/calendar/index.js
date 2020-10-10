@@ -30,7 +30,7 @@ function CalendarPage() {
     console.log(data);
   };
   return (
-    <div className="App">
+    <div className="App col-md-8">
       <DnDCalendar
         defaultDate={moment().toDate()}
         defaultView="month"

@@ -12,9 +12,10 @@ export default function () {
           <label for="newEventDate">Date</label>
           <input type="text" class="form-control" id="newEventDate" />
         </div>
-        <div class="form-group form-check">
-          <input type="text" id="description" />
+        <div class="form-group">
           <label for="description">Description (optional)</label>
+          <p></p>
+          <textarea type="text" cols="74" id="description" />
         </div>
         <button type="Create Event" class="btn btn-primary">
           Submit
