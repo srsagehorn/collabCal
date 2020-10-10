@@ -4,11 +4,18 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/styles": "^4.10.0",
+    "firebase": "^7.23.0",
+    "mdbreact": "^4.27.0",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3",
     "react-big-calendar": "^0.28.0",
+    "react-dom": "^16.6.3",
+    "react-firebase-hooks": "^2.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^2.1.1"
+    "react-scripts": "^2.1.1",
+    "react-video-cover": "^1.2.2"
   },
   "scripts": {
     "start": "react-scripts start",

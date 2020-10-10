@@ -7,7 +7,7 @@ import "./App.css";
 import LogIn from "./pages/logIn";
 import Group from "./pages/createGroup";
 import Acct from "./pages/createAcct";
-import SignUp from "./pages/signUp/signup"
+import SignUp from "./pages/signUp/signup";
 
 class App extends Component {
   render() {
