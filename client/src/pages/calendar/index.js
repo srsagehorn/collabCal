@@ -1,13 +1,13 @@
 import React from "react";
 import Cal from "../../components/calendar";
-import SideBox from "../../components/chatter";
+import NewEvent from "../../components/newEvent";
 // import Footer from "../../components/Footer"
 
 export default function () {
   return (
     <div>
       <Cal />
-      <SideBox />
+      <NewEvent />
     </div>
   );
 }
