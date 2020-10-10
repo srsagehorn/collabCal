@@ -8,8 +8,10 @@ export default function () {
   return (
     <div>
       <Nav />
-      <Cal />
-      <NewEvent />
+      <div class="row">
+        <Cal />
+        <NewEvent />
+      </div>
     </div>
   );
 }
