@@ -9,7 +9,8 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import zIndex from '@material-ui/core/styles/zIndex';
+// import zIndex from '@material-ui/core/styles/zIndex';
+import { useHistory } from 'react-router-dom'
 // import Ink from '../video/ink.mp4';
 
 
@@ -44,8 +45,8 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     backgroundImage: 'url(https://www.nicepng.com/png/detail/4-45934_blue-smoke-effect-png-clip-art-stock.png)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    backgroundSize: 'fill',
+    // backgroundPosition: 'center',
   },
   paper: {
     margin: theme.spacing(8, 4),
@@ -77,7 +78,7 @@ export default function SignInSide() {
       <Grid item xs={false} sm={4} md={7} className={classes.image}/>
       <Grid component={Paper} square>
         <div className={classes.paper}>
-            <img src="images/collabcal.png" />
+        <img src="images/collabcal.png" />
           <Typography component="h1" variant="h5">
             Log in
           </Typography>
@@ -152,7 +153,7 @@ export default function SignInSide() {
             >
               <SignIn />
             </button>
-              <SignOut />
+            <SignOut />
             </section>
         </div>
       </Grid>
@@ -163,10 +164,12 @@ export default function SignInSide() {
 
 
 function SignIn() {
-
+  const history = useHistory()
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
+    auth.signInWithRedirect(provider)
+    .then (user =>console.log(user.user.uid), history.push("/calendar"))
+    .catch(error => console.log(error));
   }
 
   return (
@@ -182,5 +185,4 @@ function SignOut() {
     <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
   )
 }
-
 

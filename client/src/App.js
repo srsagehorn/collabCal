@@ -14,9 +14,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        {/* <Nav /> */}
         <Route exact path="/" component={LogIn} />
-        {/* <Route exact path="/calendar" component={Calendar} /> */}
         <Route exact path="/group" component={Group} />
         <Route exact path="/calendar" component={Cal} />
         <Route exact path="/newaccount" component={Acct} />
