@@ -1,4 +1,5 @@
 $(document).ready(() => {
+    // may be better to do this in react
   // Getting references to our form and input
   const signUpForm = $("form#signup");
   const emailInput = $("input#newEmail");
@@ -33,24 +34,24 @@ $(document).ready(() => {
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(userData) {
-    $.post("/api/signup", {
-      email: userData.email,
-      password: userData.password,
-      username: userData.username,
-      neighborhood: userData.neighborhood,
-    })
-      .then((userData) => {
-        console.log(userData);
+//   function signUpUser(userData) {
+//     $.post("/api/signup", {
+//       email: userData.email,
+//       password: userData.password,
+//       username: userData.username,
+//       neighborhood: userData.neighborhood,
+//     })
+//       .then((userData) => {
+//         console.log(userData);
 
-        // window.location.replace("/calendar");
-        // If there's an error, handle it by throwing up a bootstrap alert
-      })
-      .catch(handleLoginErr);
-  }
+//         // window.location.replace("/calendar");
+//         // If there's an error, handle it by throwing up a bootstrap alert
+//       })
+//       .catch(handleLoginErr);
+//   }
 
-  function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
-    $("#alert").fadeIn(500);
-  }
-});
+//   function handleLoginErr(err) {
+//     $("#alert .msg").text(err.responseJSON);
+//     $("#alert").fadeIn(500);
+//   }
+// });
