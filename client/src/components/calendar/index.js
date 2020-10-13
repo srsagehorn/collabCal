@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
+// import signout from '../signout'
 
 // import "./App.css";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
@@ -30,7 +31,7 @@ function CalendarPage() {
     console.log(data);
   };
   return (
-    <div className="App">
+    <div className="App col-md-8">
       <DnDCalendar
         defaultDate={moment().toDate()}
         defaultView="month"

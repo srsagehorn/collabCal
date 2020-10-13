@@ -1,6 +1,28 @@
 import React from "react";
+import API from '../../utils/API';
+
 
 export default function () {
+
+  const [values, setValues] = useState({
+    group: "",
+  })
+
+  const handleInputChange = event => {
+    const {name, value} = event.target
+    setValues({
+      ...values, 
+      [name]: value
+    })
+  }
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    API.createGroup(values).then(results => {
+      console.log(results)
+    });
+  }
+  
   return (
     <main>
       <form id="login" class="col-md-4 center">
@@ -12,6 +34,9 @@ export default function () {
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
+            name="group" 
+            onChange={handleInputChange} 
+            value={values.group}
           />
         </div>
         <div class="form-group">
@@ -35,7 +60,7 @@ export default function () {
         </div>
         <div class="addedMembers"></div>
         <div class="textCenter">
-          <button type="submit" id="createBtn" class="btn center">
+          <button type="submit" onClick={handleSubmit} id="createBtn" class="btn center">
             Create Group
           </button>
         </div>

@@ -8,14 +8,13 @@ import LogIn from "./pages/logIn";
 import Group from "./pages/createGroup";
 import Acct from "./pages/createAcct";
 import SignUp from "./pages/signUp/signup";
+import "./style.css";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        {/* <Nav /> */}
         <Route exact path="/" component={LogIn} />
-        {/* <Route exact path="/calendar" component={Calendar} /> */}
         <Route exact path="/group" component={Group} />
         <Route exact path="/calendar" component={Cal} />
         <Route exact path="/newaccount" component={Acct} />
