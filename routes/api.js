@@ -67,4 +67,12 @@ module.exports = function(app) {
       res.json(group);
     })
   })
+
+  app.post('/api/user', function(req, res) {
+    console.log(req.body)
+    db.User.create(req.body)
+    .then(function(group) {
+      res.json(group);
+    })
+  })
 };
