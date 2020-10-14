@@ -1,14 +1,17 @@
-
 module.exports = function(sequelize, DataTypes) {
     var Calendar = sequelize.define("Calendar", {
-      type: {
+      group: {
           type: DataTypes.STRING,
           allowNull: false
+      },
+      groupmembers: {
+        member: DataTypes.STRING,
+        allowNull: true
       }
     });
   
     Calendar.associate = function(models) {
-      Calendar.belongsTo(models.User, {
+      Calendar.hasMany(models.User, {
         foreignKey: {
             allowNull: false
         }

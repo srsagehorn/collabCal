@@ -6,7 +6,6 @@ module.exports = function (sequelize, DataTypes) {
     displayname: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
     },
     email: {
       type: DataTypes.STRING,
@@ -15,6 +14,7 @@ module.exports = function (sequelize, DataTypes) {
     uid: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     }
   });
 
