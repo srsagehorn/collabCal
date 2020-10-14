@@ -1,4 +1,5 @@
 import React from "react";
+// import SignOut from '../signout/signout'
 
 export default function () {
   return (
@@ -11,6 +12,7 @@ export default function () {
           <p id="username">Jill Adams</p>
           <div id="circle"></div>
         </div>
+        {/* <SignOut /> */}
       </div>
     </header>
   );

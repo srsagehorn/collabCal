@@ -1,8 +1,14 @@
+
+import React from "react";
 import React, {useState, useEffect} from "react";
 import API from '../../utils/API';
-
+import firebase from '../firebase'
+import { useUserContext } from '../firebase/userContext'
 
 export default function () {
+  const [user] = useUserContext()
+  console.log(user)
+
 
   const [values, setValues] = useState({
     group: "",
