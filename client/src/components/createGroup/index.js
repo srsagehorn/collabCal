@@ -1,6 +1,10 @@
 import React from "react";
+import firebase from '../firebase'
+import { useUserContext } from '../firebase/userContext'
 
 export default function () {
+  const [user] = useUserContext()
+  console.log(user)
   return (
     <main>
       <form id="login" class="col-md-4 center">
