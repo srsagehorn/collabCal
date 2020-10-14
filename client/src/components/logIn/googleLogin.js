@@ -9,6 +9,8 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import axios from 'axios';
+import API from '../../utils/API';
 // import zIndex from '@material-ui/core/styles/zIndex';
 import { useHistory } from 'react-router-dom'
 // import Ink from '../video/ink.mp4';
@@ -142,13 +144,17 @@ export default function SignInSide() {
             >
               <SignIn />
             </button>
-            <SignOut />
+            {/* <SignOut /> */}
             </section>
         </div>
       </Grid>
     </Grid>
   );
 }
+
+
+// var user = firebase.auth().currentUser;
+
 
 function SignIn() {
   const [user] = useUserContext()
@@ -157,21 +163,29 @@ function SignIn() {
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithRedirect(provider)
-    .then (user => console.log(user))
-    .catch(error => console.log(error));
   }
 
+//    auth.signInWithPopup(provider)
+//   .then(user => {
+//      try {
+//        console.log(user)
+//        let newUser = {displayname: user.user.displayName, email: user.user.email, uid: user.user.uid}
+//        console.log(newUser)
+//        API.createUser(newUser).then(results => {
+//          console.log(results)})
+       // const response = axios.post('/api/users', { email: user.user.uid });
+        // console.log(':point_right: Returned data:', response);
+  //    } 
+  //    catch (e) {
+ //       console.log(`:scream: Axios request failed: ${e}`);
+ //     }
+  //    // axios.post('/api/users', { email: user.user.uid })
+      // console.log(user.user.uid)
+ //     history.push("/calendar")})
+  //  }
   return (
     <>
       <Button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</Button>
     </>
   )
-
 }
-
-function SignOut() {
-  return auth.currentUser && (
-    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
-  )
-}
-

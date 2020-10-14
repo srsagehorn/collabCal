@@ -39,6 +39,7 @@ module.exports = function(app) {
   // POST route for saving a new event
   app.post('/api/event', function(req, res) {
     // console.log('checking if im here', req, res);
+    console.log(req.body)
     db.Event.create(
       req.body
     )
@@ -57,4 +58,21 @@ module.exports = function(app) {
         res.json(dbEvent);
       });
   });
+
+  app.post('/api/group', function(req, res) {
+    db.Calendar.create({
+      type: req.body.group
+    })
+    .then(function(group) {
+      res.json(group);
+    })
+  })
+
+  app.post('/api/user', function(req, res) {
+    console.log(req.body)
+    db.User.create(req.body)
+    .then(function(group) {
+      res.json(group);
+    })
+  })
 };

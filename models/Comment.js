@@ -16,11 +16,6 @@ module.exports = function (sequelize, DataTypes) {
       Comment.belongsTo(models.Event, {
       });
     };
-
-    Comment.associate = function(models) {
-      Comment.hasMany(models.Calendar, {
-      });
-    };
   
     return Comment;
   };
