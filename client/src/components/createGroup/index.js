@@ -10,10 +10,12 @@ export default function () {
 
   const [values, setValues] = useState({
     group: "",
-  })
+    groupmembers: ""
+  }) 
 
   const handleInputChange = event => {
     const {name, value} = event.target
+    console.log(user.user);
     setValues({
       ...values, 
       [name]: value

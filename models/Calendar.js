@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
           allowNull: false
       },
       groupmembers: {
-        member: DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: true
       }
     });
