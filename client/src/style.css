@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/ggb4sgg.css");
+
 body {
   background-color: #0d1821;
   color: white;
@@ -20,6 +22,7 @@ h1 {
   text-align: right;
   padding-right: 40px;
   padding-top: 20px;
+  font-size: 20px;
 }
 
 #username {
@@ -124,4 +127,9 @@ input:hover {
   border-radius: 10px;
   height: 35px;
   width: 40px;
+}
+
+.dropdown {
+  display: inline;
+  margin-left: 10px;
 }
