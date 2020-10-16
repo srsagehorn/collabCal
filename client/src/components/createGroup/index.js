@@ -1,5 +1,3 @@
-
-import React from "react";
 import React, {useState, useEffect} from "react";
 import API from '../../utils/API';
 import firebase from '../firebase'
