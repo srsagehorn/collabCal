@@ -9,17 +9,20 @@ import Group from "./pages/createGroup";
 import Acct from "./pages/createAcct";
 import SignUp from "./pages/signUp/signup";
 import "./style.css";
+import { UserProvider } from './components/firebase/userContext'
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <Route exact path="/" component={LogIn} />
-        <Route exact path="/group" component={Group} />
-        <Route exact path="/calendar" component={Cal} />
-        <Route exact path="/newaccount" component={Acct} />
-        <Route exact path="/signup" component={SignUp} />
-      </BrowserRouter>
+      <UserProvider>
+        <BrowserRouter>
+          <Route exact path="/" component={LogIn} />
+          <Route exact path="/group" component={Group} />
+          <Route exact path="/calendar" component={Cal} />
+          <Route exact path="/newaccount" component={Acct} />
+          <Route exact path="/signup" component={SignUp} />
+        </BrowserRouter>
+      </UserProvider>
     );
   }
 }
