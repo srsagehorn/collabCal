@@ -9,11 +9,14 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import axios from 'axios';
+import API from '../../utils/API';
 // import zIndex from '@material-ui/core/styles/zIndex';
 import { useHistory } from 'react-router-dom'
 // import Ink from '../video/ink.mp4';
+import { useUserContext } from '../firebase/userContext'
 
-
+import firebaseConfig from '../firebase'
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
@@ -21,19 +24,6 @@ import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-
-
-
-firebase.initializeApp({
-  apiKey: "AIzaSyBDiZ1cd__o8osgSq5oy_DAsCrfD84EI0A",
-  authDomain: "collabcal-861dc.firebaseapp.com",
-  databaseURL: "https://collabcal-861dc.firebaseio.com",
-  projectId: "collabcal-861dc",
-  storageBucket: "collabcal-861dc.appspot.com",
-  messagingSenderId: "902494027901",
-  appId: "1:902494027901:web:d19b22b4b665cf16f2f114",
-  measurementId: "G-2847LL859L"
-})
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -69,9 +59,10 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+
+
 export default function SignInSide() {
   const classes = useStyles();
-  const [user] = useAuthState(auth);
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -153,7 +144,7 @@ export default function SignInSide() {
             >
               <SignIn />
             </button>
-            <SignOut />
+            {/* <SignOut /> */}
             </section>
         </div>
       </Grid>
@@ -162,27 +153,39 @@ export default function SignInSide() {
 }
 
 
+// var user = firebase.auth().currentUser;
+
 
 function SignIn() {
+  const [user] = useUserContext()
   const history = useHistory()
+  if (user) history.push("/calendar")
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithRedirect(provider)
-    .then (user =>console.log(user.user.uid), history.push("/calendar"))
-    .catch(error => console.log(error));
   }
 
+//    auth.signInWithPopup(provider)
+//   .then(user => {
+//      try {
+//        console.log(user)
+//        let newUser = {displayname: user.user.displayName, email: user.user.email, uid: user.user.uid}
+//        console.log(newUser)
+//        API.createUser(newUser).then(results => {
+//          console.log(results)})
+       // const response = axios.post('/api/users', { email: user.user.uid });
+        // console.log(':point_right: Returned data:', response);
+  //    } 
+  //    catch (e) {
+ //       console.log(`:scream: Axios request failed: ${e}`);
+ //     }
+  //    // axios.post('/api/users', { email: user.user.uid })
+      // console.log(user.user.uid)
+ //     history.push("/calendar")})
+  //  }
   return (
     <>
       <Button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</Button>
     </>
   )
-
 }
-
-function SignOut() {
-  return auth.currentUser && (
-    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
-  )
-}
-

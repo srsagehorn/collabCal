@@ -2,6 +2,7 @@ import React from "react";
 import Cal from "../../components/calendar";
 import NewEvent from "../../components/newEvent";
 import Nav from "../../components/nav";
+import Chat from '../../components/chat'
 // import Footer from "../../components/Footer"
 
 export default function () {
@@ -13,6 +14,7 @@ export default function () {
       <div class="row">
         <Cal />
         <NewEvent />
+        <Chat />
       </div>
     </div>
   );

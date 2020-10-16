@@ -60,9 +60,15 @@ module.exports = function(app) {
   });
 
   app.post('/api/group', function(req, res) {
-    db.Calendar.create({
-      type: req.body.group
+    db.Calendar.create(req.body)
+    .then(function(group) {
+      res.json(group);
     })
+  })
+
+  app.post('/api/user', function(req, res) {
+    console.log(req.body)
+    db.User.create(req.body)
     .then(function(group) {
       res.json(group);
     })

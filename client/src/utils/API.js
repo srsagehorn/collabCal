@@ -14,5 +14,9 @@ export default {
 
     createGroup: function(group) {
         return axios.post("/api/group", group);
+    },
+
+    createUser: function(user) {
+        return axios.post("/api/user", user);
     }
 }
