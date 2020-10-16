@@ -7,7 +7,6 @@ export default function () {
   const [user] = useUserContext()
   console.log(user)
 
-
   const [values, setValues] = useState({
     group: "",
     groupmembers: ""

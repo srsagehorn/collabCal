@@ -18,5 +18,9 @@ export default {
 
     createUser: function(user) {
         return axios.post("/api/user", user);
+    },
+
+    updateGroup: function(update) {
+        return axios.post("/api/updategroup", update);
     }
 }
