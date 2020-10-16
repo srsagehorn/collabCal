@@ -11,13 +11,16 @@
 //   },
 // };
 var db = require('../models');
+// import Sequelize from "sequelize";
+// import {Op} from "sequelize";
+
 module.exports = function(app) {
   // Get route for returning events of a specific Calendar
-  app.get('/api/calendar/:calendar', function(req, res) {
-    console.log(req.params.calendar)
+  app.get('/api/calendar', function(req, res) {
+    console.log("working")
     db.Calendar.findAll({
       where: {
-        type: req.params.calendar
+        id: req
       },
       include: [db.Event]
     })
@@ -99,5 +102,16 @@ module.exports = function(app) {
           }
         }
       })
+  })
+
+  app.get('/api/getcalendars', function( req, res) {
+    db.Calendar.findAll({
+      where: {
+        groupmembers: {[Op.contains]: '%' + req + '%'}
+      }
+    })
+      .then(function(dbEvent) {
+        res.json(dbEvent);
+      });
   })
 };

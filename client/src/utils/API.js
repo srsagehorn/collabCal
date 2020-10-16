@@ -9,7 +9,8 @@ export default {
     },
 
     getEvents: function(events) {
-        return axios.get('/api/calendar/${calendarId}', events);
+        console.log("we made it here")
+        return axios.get("/api/calendar", events);
     },
 
     createGroup: function(group) {
@@ -22,5 +23,9 @@ export default {
 
     updateGroup: function(update) {
         return axios.post("/api/updategroup", update);
+    },
+
+    getCalendars: function(calendars) {
+        return axios.get("/api/getcalendars", calendars);
     }
 }
