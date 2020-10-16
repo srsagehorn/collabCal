@@ -14,7 +14,7 @@ export default function () {
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div id="circle"></div>
   </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="/group">Create a Group</a>
     <a class="dropdown-item" href="/join">Join a Group</a>
     {/* Add the link to the sign up button here */}

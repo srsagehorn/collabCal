@@ -45,7 +45,6 @@ function CalendarPage() {
         onEventDrop={onEventDrop}
         onEventResize={onEventResize}
         resizable
-        style={{ height: "100vh" }}
       />
     </div>
   );

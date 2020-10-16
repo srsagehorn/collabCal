@@ -133,3 +133,17 @@ input:hover {
   display: inline;
   margin-left: 10px;
 }
+
+.rbc-calendar {
+  padding: 20px 10px 20px 20px;
+  height: 95%;
+}
+
+.pad {
+  padding: 20px 20px 20px 10px;
+}
+
+textarea {
+  width: 100%;
+  border-radius: 0.25rem;
+}

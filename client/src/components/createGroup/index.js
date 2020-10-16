@@ -10,7 +10,7 @@ export default function () {
   const [values, setValues] = useState({
     group: "",
     groupmembers: ""
-  }) 
+  });
 
   const handleInputChange = event => {
     const {name, value} = event.target
@@ -22,13 +22,13 @@ export default function () {
     })
   }
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    API.createGroup(values).then(results => {
-      console.log(results)
+    API.createGroup(values).then((results) => {
+      console.log(results);
     });
-  }
-  
+  };
+
   return (
     <main>
       <form id="login" class="col-md-4 center">
@@ -40,8 +40,8 @@ export default function () {
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            name="group" 
-            onChange={handleInputChange} 
+            name="group"
+            onChange={handleInputChange}
             value={values.group}
           />
         </div>
@@ -66,11 +66,17 @@ export default function () {
         </div>
         <div class="addedMembers"></div>
         <div class="textCenter">
-          <button type="submit" onClick={handleSubmit} id="createBtn" class="btn center">
+          <button
+            type="submit"
+            onClick={handleSubmit}
+            id="createBtn"
+            class="btn center"
+          >
             Create Group
           </button>
         </div>
       </form>
+      <script src="./js/createGroup.js"></script>
     </main>
   );
 }
