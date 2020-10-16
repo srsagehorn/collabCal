@@ -10,7 +10,17 @@ export default function () {
         </div>
         <div class="userInfo col-md-2">
           <p id="username">Jill Adams</p>
-          <div id="circle"></div>
+          <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <div id="circle"></div>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="/group">Create a Group</a>
+    <a class="dropdown-item" href="/join">Join a Group</a>
+    {/* Add the link to the sign up button here */}
+    <a class="dropdown-item" href="/logout">Logout</a>
+  </div>
+</div>
         </div>
         {/* <SignOut /> */}
       </div>
