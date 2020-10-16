@@ -7,7 +7,6 @@ export default function () {
   const [user] = useUserContext()
   console.log(user)
 
-
   const [values, setValues] = useState({
     group: "",
     groupmembers: ""
@@ -15,10 +14,11 @@ export default function () {
 
   const handleInputChange = event => {
     const {name, value} = event.target
-    console.log(user.user);
+    console.log(user.uid);
     setValues({
       ...values, 
-      [name]: value
+      [name]: value,
+      groupmembers: user.uid
     })
   }
 
