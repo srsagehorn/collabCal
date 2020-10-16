@@ -147,3 +147,11 @@ textarea {
   width: 100%;
   border-radius: 0.25rem;
 }
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: white;
+}

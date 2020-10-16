@@ -9,7 +9,9 @@ export default function () {
           <p id="title">CollabCal</p>
         </div>
         <div class="userInfo col-md-2">
+          <a href = "/calendar">
           <p id="username">Jill Adams</p>
+          </a>
           <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div id="circle"></div>
