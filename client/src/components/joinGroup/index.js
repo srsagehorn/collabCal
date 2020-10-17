@@ -47,7 +47,7 @@ export default function () {
         />
       </div>
       <div className="form-group">
-        <label for="exampleInputPassword1">Add members</label>
+        <label htmlFor="exampleInputPassword1">Add members</label>
         <div className="row">
           <div className="col-md-10">
             <input
