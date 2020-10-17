@@ -33,7 +33,7 @@ function CalendarPage() {
 
   // const handleSubmit = event => {
   //   event.preventDefault();
-  //   API.getEvents(1).then(res => {
+  //   API.getEvents(user.uid).then(res => {
   //     console.log(res);
   //   })
   // }

@@ -26,6 +26,7 @@ export default {
     },
 
     getCalendars: function(calendars) {
-        return axios.get("/api/getcalendars", calendars);
+        console.log(calendars)
+        return axios.get("/api/getcalendars/" + calendars);
     }
 }
