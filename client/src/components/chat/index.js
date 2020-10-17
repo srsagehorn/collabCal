@@ -19,7 +19,7 @@ const firestore = firebase.firestore();
 
 export default function Chat() {
 
-  const [user] = useAuthState(auth);
+  // const [user] = useAuthState(auth);
 
   return (
     <div>

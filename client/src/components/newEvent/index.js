@@ -31,15 +31,15 @@ export default function () {
   return (
       <form>
         <div className="form-group">
-          <label for="newEventTitle">Event Title</label>
+          <label htmlFor="newEventTitle">Event Title</label>
           <input type="text" name="event" onChange={handleInputChange} value={values.event} className="form-control" id="newEventTitle" />
         </div>
         <div className="form-group">
-          <label for="newEventDate">Date</label>
+          <label htmlFor="newEventDate">Date</label>
           <input type="text" name="eventDate" onChange={handleInputChange} value={values.eventDate} className="form-control" id="newEventDate" />
         </div>
         <div className="form-group">
-          <label for="description">Description (optional)</label>
+          <label htmlFor="description">Description (optional)</label>
           <p></p>
           <textarea type="text" name="description" onChange={handleInputChange} value={values.description}id="description" />
         </div>
