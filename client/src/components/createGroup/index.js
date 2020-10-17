@@ -26,7 +26,9 @@ export default function () {
     event.preventDefault();
     API.createGroup(values).then((results) => {
       console.log(results);
-    });
+    }).catch((err) => {
+      console.log(err)
+    })
   };
 
   return (

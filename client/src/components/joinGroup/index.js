@@ -25,7 +25,9 @@ export default function () {
     event.preventDefault();
     API.updateGroup(values).then(results => {
       console.log(results)
-    });
+    }).catch((err) => {
+      console.log(err)
+    })
   }
 
   return (
