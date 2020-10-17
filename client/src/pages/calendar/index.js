@@ -3,13 +3,11 @@ import Cal from "../../components/calendar";
 import NewEvent from "../../components/newEvent";
 import Nav from "../../components/nav";
 import Chat from '../../components/chat'
-
-import Choosecal from '../../components/choosecal';
 import API from '../../utils/API';
-
 // import firebase from '../firebase'
 import { useUserContext } from '../../components/firebase/userContext'
 // import Footer from "../../components/Footer"
+import Choosecal from '../../components/choosecal'
 
 export default function () {
   const [user] = useUserContext()

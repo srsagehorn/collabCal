@@ -11,6 +11,7 @@ import SignUp from "./pages/signUp/signup";
 import Join from "./pages/joinGroup";
 import "./style.css";
 import { UserProvider } from './components/firebase/userContext'
+import LoggedOut from "./pages/loggedOut";
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
           <Route exact path="/newaccount" component={Acct} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/join" component={Join} />
+          <Route exact path="/loggedout" component={LoggedOut} />
         </BrowserRouter>
       </UserProvider>
     );

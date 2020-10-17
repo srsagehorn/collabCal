@@ -1,5 +1,12 @@
-import React from "react";
-// import SignOut from '../signout/signout'
+import React from 'react';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
+import 'firebase/analytics';
+import { Link } from "react-router-dom";
+
+import firebaseConfig from '../firebase'
+const auth = firebase.auth();
 
 export default function () {
   return (
@@ -19,13 +26,18 @@ export default function () {
   <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
     <a className="dropdown-item" href="/group">Create a Group</a>
     <a className="dropdown-item" href="/join">Join a Group</a>
-    {/* Add the link to the sign up button here */}
-    <a className="dropdown-item" href="/logout">Logout</a>
+    <a className="dropdown-item" href="/loggedout"><SignOut /></a>
   </div>
 </div>
         </div>
-        {/* <SignOut /> */}
+        
       </div>
     </header>
   );
+}
+
+function SignOut() {
+  return auth.currentUser && (
+    <Link to="/loggedout"><a className="sign-out" onClick={() => auth.signOut()}>Logout</a></Link>
+  )
 }
