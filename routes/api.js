@@ -6,7 +6,7 @@ module.exports = function(app) {
   // Get route for returning events of a specific Calendar
   app.get('/api/calendar/:group', function(req, res) {
     console.log("working")
-    db.Events.findAll({
+    db.Event.findAll({
       where: {
         calName: req.params.group
       }
