@@ -11,7 +11,9 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 // import NewEvent from "../../components/newEvent";
 // // import Footer from "../../components/Footer"
 
-function CalendarPage() {
+function CalendarPage(props) {
+  const eventsArray = props.events
+  console.log(props)
   const localizer = momentLocalizer(moment);
   const DnDCalendar = withDragAndDrop(Calendar);
   const startDate = moment().toDate();
@@ -31,26 +33,13 @@ function CalendarPage() {
     console.log(data);
   };
 
-  // const handleSubmit = event => {
-  //   event.preventDefault();
-  //   API.getEvents(user.uid).then(res => {
-  //     console.log(res);
-  //   })
-  // }
 
   return (
     <div className="App col-md-8">
-      {/* <button onClick={handleSubmit}>Hello</button> */}
       <DnDCalendar
         defaultDate={moment().toDate()}
         defaultView="month"
-        events={[
-          {
-            start: moment().toDate(),
-            end: moment().toDate(),
-            title: "Some title",
-          }
-        ]}
+        events={eventsArray ? eventsArray : []}
         localizer={localizer}
         onEventDrop={onEventDrop}
         onEventResize={onEventResize}

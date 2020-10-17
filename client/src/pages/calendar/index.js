@@ -15,16 +15,15 @@ export default function () {
   if(user) {
     console.log(user.uid)
   }
-  const [mycals, setMycals] = useState({
-    cals: []
-  })
+  const [mycals, setMycals] = useState(
+    []
+  )
   const [events, setEvents] = useState({
     currentEvents: []
   })
   const [currentCal, setCal] = useState({
     currentCal: ""
   })
-  // API 'get' request from events table. store in array. pass array into the CAL tag below (as a prop?). 
 
   // call getCalendars route to get calendars user belongs to. 
   // set the returned calendars in the mycals state. 
@@ -37,25 +36,33 @@ export default function () {
       console.log(user)
       API.getCalendars(user.uid).then(results => {
             console.log(results.data)
-            setMycals({cals: results.data})
+            setMycals(results.data)
       })
     }
   }, [user]);
 
+  function handleChange(newcal) {
+    setCal({currentCal: newcal});
+    // getEvents()
+  }
 
-//   handleCalendarChange() {
-// // api call using calendar name clicked on
-//   }
+  function getEvents() {
+    console.log(currentCal.currentCal)
+    API.getEvents(currentCal.currentCal).then(results => {
+
+      setEvents({currentEvents: results.data})
+    })
+  }
+
   return (
     <div>
       <Nav />
-      <p>{mycals.cals.length}</p>
-      <Choosecal cals={mycals.cals} />
-
+      <p>{user ? mycals.length : "loading calendars..."}</p>
+      <Choosecal onClick={handleChange} cals={mycals} />
       <div className="row">
-        <Cal />
+        <Cal events={events.currentEvents} />
         <div className="col-md-4 pad">
-        <NewEvent />
+        <NewEvent getEvents={getEvents} calendar={currentCal.currentCal}/>
         <Chat />
         </div>
       </div>

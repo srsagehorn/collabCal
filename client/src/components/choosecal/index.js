@@ -5,18 +5,18 @@ import { useUserContext } from '../firebase/userContext'
 
 export default function (props) {
     const calsArray = props.cals  
-    console.log("this is what we are looking at" + props.cals)
 
-    const handleSubmit = event => {
+    const handleChange = event => {
         event.preventDefault();
         console.log(event.target.value)
-        // setCal({currentCal: event.target.value})
+        props.onClick(event.target.value)
+
       }
 
     return (
       <main>
         <ul>
-            {calsArray ? calsArray.map(cal => <button onClick={handleSubmit} value={cal.group} key={cal.group}>{cal.group}</button>) : "You have no calendars!"}
+            {calsArray ? calsArray.map(cal => <button onClick={handleChange} value={cal.group} key={cal.group}>{cal.group}</button>) : "You have no calendars!"}
         </ul>
       </main>
     );

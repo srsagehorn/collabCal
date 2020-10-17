@@ -4,13 +4,12 @@ const Op = Sequelize.Op;
 
 module.exports = function(app) {
   // Get route for returning events of a specific Calendar
-  app.get('/api/calendar', function(req, res) {
+  app.get('/api/calendar/:group', function(req, res) {
     console.log("working")
-    db.Calendar.findAll({
+    db.Events.findAll({
       where: {
-        id: req
-      },
-      include: [db.Event]
+        calName: req.params.group
+      }
     })
       .then(function(dbEvent) {
         res.json(dbEvent);
@@ -28,12 +27,12 @@ module.exports = function(app) {
       .then(function(dbEvent) {
         res.json(dbEvent);
       }).catch((err) => {
+        console.log(err)
         res.status(500).json(err)
       })
   });
   // POST route for saving a new event
   app.post('/api/event', function(req, res) {
-    // console.log('checking if im here', req, res);
     console.log(req.body)
     db.Event.create(
       req.body
@@ -41,6 +40,7 @@ module.exports = function(app) {
       .then(function(dbEvent) {
         res.json(dbEvent);
       }).catch((err) => {
+        console.log(err)
         res.status(500).json(err)
       })
   });
