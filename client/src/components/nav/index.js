@@ -1,6 +1,12 @@
-import React from "react";
+import React from 'react';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
+import 'firebase/analytics';
+import { Link } from "react-router-dom";
 import { useUserContext } from '../firebase/userContext'
-// import SignOut from '../signout/signout'
+import firebaseConfig from '../firebase'
+const auth = firebase.auth();
 
 export default function (props) {
   // const [user] = useUserContext()
@@ -24,12 +30,18 @@ export default function (props) {
     <a className="dropdown-item" href="/join">Join a Group</a>
     <a className="dropdown-item" href="/calendar">Back to Calendars</a>
     {/* Add the link to the sign up button here */}
-    <a className="dropdown-item" href="/logout">Logout</a>
+    <a className="dropdown-item" href="/loggedout"><SignOut /></a>
   </div>
 </div>
         </div>
-        {/* <SignOut /> */}
+        
       </div>
     </header>
   );
+}
+
+function SignOut() {
+  return auth.currentUser && (
+    <Link to="/loggedout"><a className="sign-out" onClick={() => auth.signOut()}>Logout</a></Link>
+  )
 }

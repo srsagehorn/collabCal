@@ -9,6 +9,7 @@ export default function (props) {
         event.preventDefault();
         console.log(event.target.value)
         props.onClick(event.target.value)
+
       }
 
     return (
