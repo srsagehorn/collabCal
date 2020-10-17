@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from "react";
+// , useEffect was removed from the below brackets to get rid of an error, if needed put back in
+import React, { useState} from "react";
 import API from '../../utils/API';
-import firebase from '../firebase'
+// import firebase from '../firebase'
 import { useUserContext } from '../firebase/userContext'
 
 export default function () {

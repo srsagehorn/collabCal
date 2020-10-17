@@ -16,18 +16,18 @@ import { useHistory } from 'react-router-dom'
 // import Ink from '../video/ink.mp4';
 import { useUserContext } from '../firebase/userContext'
 
-import firebaseConfig from '../firebase'
+// import firebaseConfig from '../firebase'
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
 
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
+// import { useAuthState } from 'react-firebase-hooks/auth';
+// import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 const auth = firebase.auth();
-const firestore = firebase.firestore();
-const analytics = firebase.analytics();
+// const firestore = firebase.firestore();
+// const analytics = firebase.analytics();
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -69,7 +69,7 @@ export default function SignInSide() {
       <Grid item xs={false} sm={4} md={7} className={classes.image}/>
       <Grid component={Paper} square>
         <div className={classes.paper}>
-        <img src="images/collabcal.png" alt="" />
+        <img alt = "logo" src="images/collabcal.png" />
           <Typography component="h1" variant="h5">
             Log in
           </Typography>

@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from "react";
+// , useEffect was removed from the below brackets to get rid of an error, if needed put back in
+import React, { useState} from "react";
 import API from '../../utils/API';
 
 export default function () {

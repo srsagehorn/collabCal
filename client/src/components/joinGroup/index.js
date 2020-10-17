@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from "react";
-import firebase from '../firebase'
+// , useEffect was removed from the below brackets to get rid of an error, if needed put back in
+import React, { useState} from "react";
+// import firebase from '../firebase'
 import { useUserContext } from '../firebase/userContext'
 import API from '../../utils/API';
 
@@ -31,6 +32,11 @@ export default function () {
   }
 
   return (
+<<<<<<< HEAD
+=======
+  <div>
+    <h1 className = "textCenter">Join a Group</h1>
+>>>>>>> da502ac2d3655796fdfc9ac6324916ab384ef53d
     <form id="login" className="col-md-4 center">
       <div className="form-group">
         <label for="exampleInputEmail1">Group Name</label>
@@ -44,6 +50,7 @@ export default function () {
           value={values.group}
         />
       </div>
+<<<<<<< HEAD
       <div className="form-group">
         <label for="exampleInputPassword1">Add members</label>
         <div className="row">
@@ -67,8 +74,14 @@ export default function () {
       <div className="textCenter">
         <button type="submit" onClick={handleSubmit} id="createBtn" className="btn center">
           Create Group
+=======
+      <div className="textCenter">
+        <button type="submit" onClick={handleSubmit} id="createBtn" className="btn center">
+          Join Group
+>>>>>>> da502ac2d3655796fdfc9ac6324916ab384ef53d
         </button>
       </div>
     </form>
+    </div>
   );
 }
