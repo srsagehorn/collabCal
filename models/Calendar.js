@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
     Calendar.associate = function(models) {
       Calendar.hasMany(models.User, {
         foreignKey: {
-            allowNull: false
+            allowNull: true
         }
       });
     };
@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
     Calendar.associate = function(models) {
         Calendar.hasMany(models.Event, {
           foreignKey: {
-            allowNull: false
+            allowNull: true
           }
         });
       };
