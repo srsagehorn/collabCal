@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+// , useEffect was removed from the below brackets to get rid of an error, if needed put back in
+import React, { useState} from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
-import API from '../../utils/API';
+// import API from '../../utils/API';
 
 // import "./App.css";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";

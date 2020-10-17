@@ -3,7 +3,7 @@ import Cal from "../../components/calendar";
 import NewEvent from "../../components/newEvent";
 import Nav from "../../components/nav";
 import Chat from '../../components/chat'
-import API from '../../utils/API';
+// import API from '../../utils/API';
 // import firebase from '../firebase'
 import { useUserContext } from '../../components/firebase/userContext'
 // import Footer from "../../components/Footer"
@@ -38,7 +38,7 @@ export default function () {
       <Nav />
       <div class="row">
         <Cal />
-        <div class="col-md-4 pad">
+        <div class="col-md-4 pad wider">
         <NewEvent />
         <Chat />
         </div>
