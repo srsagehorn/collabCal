@@ -10,15 +10,15 @@ export default function (props) {
     const handleSubmit = event => {
         event.preventDefault();
         console.log(event.target.value)
-        setCal({currentCal: event.target.value})
+        // setCal({currentCal: event.target.value})
       }
 
     return (
-      <main>
-        <ul>
+      <div className = "nav nav-tabs">
+        <ul className = "nav-item">
             {calsArray ? calsArray.map(cal => <button onClick={handleSubmit} value={cal.group} key={cal.group}>{cal.group}</button>) : "You have no calendars!"}
         </ul>
-      </main>
+      </div>
     );
   }
   

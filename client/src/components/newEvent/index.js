@@ -31,6 +31,7 @@ export default function () {
   return (
       <form>
         <div className="form-group">
+          <h2 className = "textCenter">Create Event</h2>
           <label htmlFor="newEventTitle">Event Title</label>
           <input type="text" name="event" onChange={handleInputChange} value={values.event} className="form-control" id="newEventTitle" />
         </div>
