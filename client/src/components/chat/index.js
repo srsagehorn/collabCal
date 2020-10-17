@@ -23,15 +23,15 @@ export default function Chat() {
 
   return (
     <div>
-        <ChatRoom />
-      </div>
+      <ChatRoom />
+    </div>
       
   );
 }
 
 function ChatRoom() {
   const dummy = useRef();
-  const messagesRef = firestore.collection('messages');
+  const messagesRef = firestore.collection('channels');
   const query = messagesRef.orderBy('createdAt').limit(25);
 
   const [messages] = useCollectionData(query, { idField: 'id' });
@@ -45,6 +45,7 @@ function ChatRoom() {
     const { uid, photoURL } = auth.currentUser;
 
     await messagesRef.add({
+      calendar: 'nick',
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
@@ -59,7 +60,7 @@ function ChatRoom() {
     <div className="chat-app">
       <header className="chat-header"><h3>Chat</h3></header>
       <div className="chat-main">
-        {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
+        {messages && messages.filter(message=>message.calendar == "nick").map(msg => <ChatMessage key={msg.id} message={msg} />)}
         <span ref={dummy}></span>
       <form className= "chat-form" onSubmit={sendMessage}>
         <input className="chat-input" value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="message" />
@@ -81,4 +82,3 @@ function ChatMessage(props) {
       </div>
     </>)
 }
-
