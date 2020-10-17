@@ -162,3 +162,10 @@ a:hover {
   padding-top: 30px;
   padding-right: 50px;
 }
+.sign-out {
+  color: red;
+}
+
+.sign-out:hover {
+  color: darkred;
+}

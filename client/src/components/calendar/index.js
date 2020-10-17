@@ -2,18 +2,13 @@ import React, { useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
-// import API from '../../utils/API';
-
-// import "./App.css";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-// import Cal from "../../components/calendar";
-// import NewEvent from "../../components/newEvent";
-// // import Footer from "../../components/Footer"
 
 function CalendarPage(props) {
-  const eventsArray = props.events
-  console.log(props)
+  let eventsArray = props.events
+  console.log(props.events)
+  let newEvents = eventsArray.map(event => ({ title: event.event, start: event.eventStart, end: event.eventEnd }))
   const localizer = momentLocalizer(moment);
   const DnDCalendar = withDragAndDrop(Calendar);
   const startDate = moment().toDate();
@@ -40,7 +35,7 @@ function CalendarPage(props) {
       <DnDCalendar
         defaultDate={moment().toDate()}
         defaultView="month"
-        events={eventsArray ? eventsArray : []}
+        events={eventsArray ? newEvents : []}
         localizer={localizer}
         onEventDrop={onEventDrop}
         onEventResize={onEventResize}

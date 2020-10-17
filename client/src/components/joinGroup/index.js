@@ -32,8 +32,7 @@ export default function () {
   }
 
   return (
-  <div>
-    <h1 className = "textCenter">Join a Group</h1>
+    <div>
     <form id="login" className="col-md-4 center">
       <div className="form-group">
         <label for="exampleInputEmail1">Group Name</label>
@@ -47,9 +46,29 @@ export default function () {
           value={values.group}
         />
       </div>
+      <div className="form-group">
+        <label htmlFor="exampleInputPassword1">Add members</label>
+        <div className="row">
+          <div className="col-md-10">
+            <input
+              type="password"
+              className="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <div className="col-md-2">
+            <div className="add center">
+              <p id="plus" className="textCenter">
+                +
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="addedMembers"></div>
       <div className="textCenter">
         <button type="submit" onClick={handleSubmit} id="createBtn" className="btn center">
-          Join Group
+          Create Group
         </button>
       </div>
     </form>
