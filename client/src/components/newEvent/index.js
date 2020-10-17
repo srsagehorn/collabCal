@@ -1,16 +1,24 @@
 // , useEffect was removed from the below brackets to get rid of an error, if needed put back in
-import React, { useState} from "react";
+import React, { useEffect, useState} from "react";
 import API from '../../utils/API';
 
-export default function () {
-
+export default function (props) {
+  const cal = props.calendar;
+  console.log(cal)
   const [values, setValues] = useState({
     event: "",
     eventStart: "",
     eventEnd: "",
     description: "",
-    CalendarId: 1
+    calName: cal
   })
+
+  useEffect(() => {
+    setValues({
+      ...values,
+      calName: props.calendar
+    })
+  }, [props.calendar])
 
   const handleInputChange = event => {
     const {name, value} = event.target
@@ -20,10 +28,13 @@ export default function () {
     })
   }
 
+  
   const handleSubmit = event => {
     event.preventDefault();
+    console.log(values)
     API.createEvent(values).then(results => {
       console.log(results)
+      props.getEvents()
     }).catch((err) => {
       console.log(err)
     })
@@ -37,8 +48,12 @@ export default function () {
           <input type="text" name="event" onChange={handleInputChange} value={values.event} className="form-control" id="newEventTitle" />
         </div>
         <div className="form-group">
-          <label htmlFor="newEventDate">Date</label>
-          <input type="text" name="eventDate" onChange={handleInputChange} value={values.eventDate} className="form-control" id="newEventDate" />
+          <label htmlFor="newEventDate">Start Date</label>
+          <input type="text" name="eventStart" onChange={handleInputChange} value={values.eventStart} className="form-control" id="newEventDate" />
+        </div>
+        <div className="form-group">
+          <label htmlFor="newEventDate">End Date</label>
+          <input type="text" name="eventEnd" onChange={handleInputChange} value={values.eventEnd} className="form-control" id="newEventDate" />
         </div>
         <div className="form-group">
           <label htmlFor="description">Description (optional)</label>
