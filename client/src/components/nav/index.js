@@ -4,13 +4,25 @@ import React from "react";
 export default function () {
   return (
     <header>
-      <div class="row">
-        <div class="col-md-10">
+      <div className="row">
+        <div className="col-md-10">
           <p id="title">CollabCal</p>
         </div>
-        <div class="userInfo col-md-2">
+        <div className="userInfo col-md-2">
+          <a href = "/calendar">
           <p id="username">Jill Adams</p>
-          <div id="circle"></div>
+          </a>
+          <div className="dropdown">
+  <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <div id="circle"></div>
+  </button>
+  <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+    <a className="dropdown-item" href="/group">Create a Group</a>
+    <a className="dropdown-item" href="/join">Join a Group</a>
+    {/* Add the link to the sign up button here */}
+    <a className="dropdown-item" href="/logout">Logout</a>
+  </div>
+</div>
         </div>
         {/* <SignOut /> */}
       </div>

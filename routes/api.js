@@ -14,7 +14,9 @@ module.exports = function(app) {
     })
       .then(function(dbEvent) {
         res.json(dbEvent);
-      });
+      }).catch((err) => {
+        res.status(500).json(err)
+      })
   });
   // Get route for retrieving a single event
   app.get('/api/event/:id', function(req, res) {
@@ -25,7 +27,9 @@ module.exports = function(app) {
     })
       .then(function(dbEvent) {
         res.json(dbEvent);
-      });
+      }).catch((err) => {
+        res.status(500).json(err)
+      })
   });
   // POST route for saving a new event
   app.post('/api/event', function(req, res) {
@@ -36,7 +40,9 @@ module.exports = function(app) {
     )
       .then(function(dbEvent) {
         res.json(dbEvent);
-      });
+      }).catch((err) => {
+        res.status(500).json(err)
+      })
   });
     // POST route for saving a new comment
   app.post('/api/comment', function(req, res) {
@@ -47,13 +53,17 @@ module.exports = function(app) {
     })
       .then(function(dbEvent) {
         res.json(dbEvent);
-      });
+      }).catch((err) => {
+        res.status(500).json(err)
+      })
   });
 // creating new calendar group
   app.post('/api/group', function(req, res) {
     db.Calendar.create(req.body)
     .then(function(group) {
       res.json(group);
+    }).catch((err) => {
+      res.status(500).json(err)
     })
   })
 // adding user to db
@@ -90,6 +100,9 @@ module.exports = function(app) {
           }
         }
       })
+      .catch((err) => {
+        console.log(err)
+      })
   })
 
   app.get('/api/getcalendars/:calid', function( req, res ) {
@@ -101,6 +114,8 @@ module.exports = function(app) {
     })
       .then(function(dbEvent) {
         res.json(dbEvent);
-      }); 
+      }).catch((err) => {
+        res.status(500).json(err)
+      })
   })
 };

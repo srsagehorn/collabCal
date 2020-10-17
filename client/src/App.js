@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import ReactDOM from "react-dom";
-// import Nav from "./components/nav";
+// removed , Link  from below brackets to get rid of error
+import { BrowserRouter, Route} from "react-router-dom";
+// import ReactDOM from "react-dom";
 import "./App.css";
 import Cal from "./pages/calendar";
 import LogIn from "./pages/logIn";
