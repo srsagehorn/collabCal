@@ -13,7 +13,7 @@ export default function () {
       <Nav />
       <div class="row">
         <Cal />
-        <div class="col-md-4 pad">
+        <div class="col-md-4 pad wider">
         <NewEvent />
         <Chat />
         </div>
