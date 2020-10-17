@@ -9,10 +9,6 @@ import { useUserContext } from '../../components/firebase/userContext'
 
 export default function () {
   const [user] = useUserContext()
-  console.log(user);
-  if(user) {
-    console.log(user.uid)
-  }
   const [mycals, setMycals] = useState(
     []
   )
@@ -27,8 +23,11 @@ export default function () {
     if(user) {
       console.log(user)
       API.getCalendars(user.uid).then(results => {
-            console.log(results.data)
-            setMycals(results.data)
+        console.log(results.data)
+        setMycals(results.data)
+      })
+      .catch((err) => {
+        console.log(err)
       })
     }
   }, [user]);
@@ -41,15 +40,16 @@ export default function () {
   function getEvents() {
     console.log(currentCal.currentCal)
     API.getEvents(currentCal.currentCal).then(results => {
-
       setEvents({currentEvents: results.data})
+    })
+    .catch((err) => {
+      console.log(err)
     })
   }
 
   return (
     <div>
-      <Nav />
-      <p>{user ? mycals.length : "loading calendars..."}</p>
+      <Nav name={user}/>
       <Choosecal onClick={handleChange} cals={mycals} />
       <div className="row">
         <Cal events={events.currentEvents} />

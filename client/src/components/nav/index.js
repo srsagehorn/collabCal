@@ -1,7 +1,10 @@
 import React from "react";
+import { useUserContext } from '../firebase/userContext'
 // import SignOut from '../signout/signout'
 
-export default function () {
+export default function (props) {
+  // const [user] = useUserContext()
+  // console.log(props.name)
   return (
     <header>
       <div className="row">
@@ -19,6 +22,7 @@ export default function () {
   <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
     <a className="dropdown-item" href="/group">Create a Group</a>
     <a className="dropdown-item" href="/join">Join a Group</a>
+    <a className="dropdown-item" href="/calendar">Back to Calendars</a>
     {/* Add the link to the sign up button here */}
     <a className="dropdown-item" href="/logout">Logout</a>
   </div>
