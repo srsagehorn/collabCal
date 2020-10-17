@@ -14,12 +14,12 @@ import firebaseConfig from '../firebase'
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
-const analytics = firebase.analytics();
+// const analytics = firebase.analytics();
 
 
 export default function Chat() {
 
-  const [user] = useAuthState(auth);
+  // const [user] = useAuthState(auth);
 
   return (
     <div>
@@ -62,7 +62,7 @@ function ChatRoom() {
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
         <span ref={dummy}></span>
       </main>
-      <form classname= "chat-form" onSubmit={sendMessage}>
+      <form className= "chat-form" onSubmit={sendMessage}>
         <input className="chat-input" value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="message" />
         <button className="chat-button" type="submit" disabled={!formValue}>Send</button>
       </form>
@@ -77,7 +77,7 @@ function ChatMessage(props) {
   return (
     <>
       <div className={`message ${messageClass}`}>
-        <img className="chat-img" src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+        <img alt = "logo" className="chat-img" src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
         <p className="chat-p">{text}</p>
       </div>
     </>)

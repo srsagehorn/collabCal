@@ -3,8 +3,10 @@ import Cal from "../../components/calendar";
 import NewEvent from "../../components/newEvent";
 import Nav from "../../components/nav";
 import Chat from '../../components/chat'
+
 import Choosecal from '../../components/choosecal';
 import API from '../../utils/API';
+
 // import firebase from '../firebase'
 import { useUserContext } from '../../components/firebase/userContext'
 // import Footer from "../../components/Footer"
@@ -12,6 +14,9 @@ import { useUserContext } from '../../components/firebase/userContext'
 export default function () {
   const [user] = useUserContext()
   console.log(user);
+  if(user) {
+    console.log(user.uid)
+  }
   const [mycals, setMycals] = useState({
     cals: []
   })
@@ -48,10 +53,13 @@ export default function () {
       <Nav />
       <p>{mycals.cals.length}</p>
       <Choosecal cals={mycals.cals} />
+
       <div className="row">
         <Cal />
+        <div className="col-md-4 pad">
         <NewEvent />
         <Chat />
+        </div>
       </div>
     </div>
   );

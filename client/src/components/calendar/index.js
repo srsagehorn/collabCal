@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
-import API from '../../utils/API';
+// import API from '../../utils/API';
 
 // import "./App.css";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
@@ -55,7 +55,6 @@ function CalendarPage() {
         onEventDrop={onEventDrop}
         onEventResize={onEventResize}
         resizable
-        style={{ height: "100vh" }}
       />
     </div>
   );
