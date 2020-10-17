@@ -1,18 +1,6 @@
-// import axios from 'axios';
-// const BASEURL = 'https://app.ticketmaster.com/discovery/v2/events.json?size=50';
-// const APIKEY = 'Agwlo6QHZKgKF1nFO4tM5eSQ54RQLrOU';
-// // Export an object with a 'search' method that searches the Giphy API for the passed query
-// // Events API Call based on User postCode
-// export default {
-//   search: function (postalCode) {
-//     return axios.get(
-//       BASEURL + '&postalCode=' + postalCode + '&apikey=' + APIKEY
-//     );
-//   },
-// };
 var db = require('../models');
-// import Sequelize from "sequelize";
-// import {Op} from "sequelize";
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 module.exports = function(app) {
   // Get route for returning events of a specific Calendar
@@ -104,10 +92,11 @@ module.exports = function(app) {
       })
   })
 
-  app.get('/api/getcalendars', function( req, res) {
+  app.get('/api/getcalendars/:calid', function( req, res ) {
+    console.log(req.params.calid);
     db.Calendar.findAll({
       where: {
-        groupmembers: {[Op.contains]: '%' + req + '%'}
+        groupmembers: {[Op.like]: '%' + req.params.calid + '%'}
       }
     })
       .then(function(dbEvent) {

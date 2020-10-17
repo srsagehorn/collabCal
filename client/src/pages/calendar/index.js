@@ -3,6 +3,7 @@ import Cal from "../../components/calendar";
 import NewEvent from "../../components/newEvent";
 import Nav from "../../components/nav";
 import Chat from '../../components/chat'
+import Choosecal from '../../components/choosecal';
 import API from '../../utils/API';
 // import firebase from '../firebase'
 import { useUserContext } from '../../components/firebase/userContext'
@@ -13,8 +14,11 @@ export default function () {
   console.log(user);
   const [mycals, setMycals] = useState({
     cals: []
-  }, [])
-  const [currentCal, setCurrentCal] = useState({
+  })
+  const [events, setEvents] = useState({
+    currentEvents: []
+  })
+  const [currentCal, setCal] = useState({
     currentCal: ""
   })
   // API 'get' request from events table. store in array. pass array into the CAL tag below (as a prop?). 
@@ -25,18 +29,26 @@ export default function () {
   // then call getEvents endpoint to retrive events from that calendar and save into an array of objects.
   // pass that array into the calendar component as a prop?
   
-  // useEffect(() => {
-  //   console.log(user.uid)
-  //   API.getCalendars(user.uid).then(results => {
-  //     console.log(results)
-  //   })
-  //   .then(res => this.setState({cals: res}))
-  // });
+  useEffect(() => {
+    if(user) {
+      console.log(user)
+      API.getCalendars(user.uid).then(results => {
+            console.log(results.data)
+            setMycals({cals: results.data})
+      })
+    }
+  }, [user]);
 
+
+//   handleCalendarChange() {
+// // api call using calendar name clicked on
+//   }
   return (
     <div>
       <Nav />
-      <div class="row">
+      <p>{mycals.cals.length}</p>
+      <Choosecal cals={mycals.cals} />
+      <div className="row">
         <Cal />
         <NewEvent />
         <Chat />
