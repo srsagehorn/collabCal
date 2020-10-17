@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from "react";
+// , useEffect was removed from the below brackets to get rid of an error, if needed put back in
+import React, { useState} from "react";
 import API from '../../utils/API';
 
 export default function () {
@@ -29,20 +30,20 @@ export default function () {
 
   return (
       <form>
-        <div class="form-group">
-          <label for="newEventTitle">Event Title</label>
-          <input type="text" name="event" onChange={handleInputChange} value={values.event} class="form-control" id="newEventTitle" />
+        <div className="form-group">
+          <label htmlFor="newEventTitle">Event Title</label>
+          <input type="text" name="event" onChange={handleInputChange} value={values.event} className="form-control" id="newEventTitle" />
         </div>
-        <div class="form-group">
-          <label for="newEventDate">Date</label>
-          <input type="text" name="eventDate" onChange={handleInputChange} value={values.eventDate} class="form-control" id="newEventDate" />
+        <div className="form-group">
+          <label htmlFor="newEventDate">Date</label>
+          <input type="text" name="eventDate" onChange={handleInputChange} value={values.eventDate} className="form-control" id="newEventDate" />
         </div>
-        <div class="form-group">
-          <label for="description">Description (optional)</label>
+        <div className="form-group">
+          <label htmlFor="description">Description (optional)</label>
           <p></p>
           <textarea type="text" name="description" onChange={handleInputChange} value={values.description}id="description" />
         </div>
-        <button type="Create Event" onClick={handleSubmit} class="btn btn-primary">
+        <button type="Create Event" onClick={handleSubmit} className="btn btn-primary">
           Submit
         </button>
       </form>

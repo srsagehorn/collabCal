@@ -14,7 +14,7 @@ import API from '../../utils/API';
 import { useHistory } from 'react-router-dom'
 import { useUserContext } from '../firebase/userContext'
 
-import firebaseConfig from '../firebase'
+// import firebaseConfig from '../firebase'
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
@@ -57,7 +57,7 @@ export default function SignInSide() {
       <Grid item xs={false} sm={4} md={7}/>
       <Grid component={Paper} square>
         <div className={classes.paper}>
-        <img src="images/collabcal.png" />
+        <img alt = "logo" src="images/collabcal.png" />
           <Typography component="h1" variant="h5">
             Log in
           </Typography>

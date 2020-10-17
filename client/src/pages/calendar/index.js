@@ -3,7 +3,7 @@ import Cal from "../../components/calendar";
 import NewEvent from "../../components/newEvent";
 import Nav from "../../components/nav";
 import Chat from '../../components/chat'
-import API from '../../utils/API';
+// import API from '../../utils/API';
 // import firebase from '../firebase'
 import { useUserContext } from '../../components/firebase/userContext'
 // import Footer from "../../components/Footer"
@@ -11,6 +11,9 @@ import { useUserContext } from '../../components/firebase/userContext'
 export default function () {
   const [user] = useUserContext()
   console.log(user);
+  if(user) {
+    console.log(user.uid)
+  }
   const [mycals, setMycals] = useState({
     cals: []
   }, [])
@@ -38,7 +41,7 @@ export default function () {
       <Nav />
       <div className="row">
         <Cal />
-        <div class="col-md-4 pad">
+        <div className="col-md-4 pad">
         <NewEvent />
         <Chat />
         </div>
