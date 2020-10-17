@@ -1,18 +1,22 @@
 import React from "react";
-// import SignOut from '../signout/signout'
+import SignOut from '../signout/signout'
 
 export default function () {
   return (
     <header>
-      <div class="row">
-        <div class="col-md-10">
+      <div className="row">
+        <div className="col-md-10">
           <p id="title">CollabCal</p>
+          
         </div>
-        <div class="userInfo col-md-2">
+        <div className="userInfo col-md-2">
           <p id="username">Jill Adams</p>
           <div id="circle"></div>
+          <SignOut />
         </div>
-        {/* <SignOut /> */}
+        <div>
+          
+          </div>
       </div>
     </header>
   );

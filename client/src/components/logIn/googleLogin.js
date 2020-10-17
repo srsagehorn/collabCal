@@ -144,7 +144,6 @@ export default function SignInSide() {
             >
               <SignIn />
             </button>
-            {/* <SignOut /> */}
             </section>
         </div>
       </Grid>
@@ -162,7 +161,7 @@ function SignIn() {
   if (user) history.push("/calendar")
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithRedirect(provider)
+    auth.signInWithPopup(provider)
   }
 
 //    auth.signInWithPopup(provider)

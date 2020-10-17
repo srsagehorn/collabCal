@@ -23,8 +23,8 @@ export default function Chat() {
 
   return (
     <div>
-        <ChatRoom />
-      </div>
+      <ChatRoom />
+    </div>
       
   );
 }

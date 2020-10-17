@@ -11,7 +11,7 @@ export default function () {
   return (
     <div>
       <Nav />
-      <div class="row">
+      <div className="row">
         <Cal />
         <NewEvent />
         <Chat />
