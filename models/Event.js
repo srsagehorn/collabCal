@@ -18,11 +18,16 @@ module.exports = function (sequelize, DataTypes) {
     description: {
       type: DataTypes.STRING,
       allowNull: true
-    }
+    },
+    calName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
   });
 
   Event.associate = function (models) {
     Event.belongsTo(models.Calendar, {
+      constraints: false
     });
   };
 
