@@ -15,7 +15,6 @@ export default function () {
           <SignOut />
         </div>
         <div>
-          
           </div>
       </div>
     </header>

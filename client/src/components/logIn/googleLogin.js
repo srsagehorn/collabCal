@@ -11,9 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios';
 import API from '../../utils/API';
-// import zIndex from '@material-ui/core/styles/zIndex';
 import { useHistory } from 'react-router-dom'
-// import Ink from '../video/ink.mp4';
 import { useUserContext } from '../firebase/userContext'
 
 import firebaseConfig from '../firebase'
@@ -22,21 +20,13 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
 
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
-
 const auth = firebase.auth();
-const firestore = firebase.firestore();
-const analytics = firebase.analytics();
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    height: '100vh',
-  },
   image: {
     backgroundImage: 'url(https://www.nicepng.com/png/detail/4-45934_blue-smoke-effect-png-clip-art-stock.png)',
     backgroundSize: 'fill',
-    // backgroundPosition: 'center',
+    height: '100vh'
   },
   paper: {
     margin: theme.spacing(8, 4),
@@ -59,34 +49,18 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-
-
 export default function SignInSide() {
   const classes = useStyles();
 
   return (
-    <Grid container component="main" className={classes.root}>
-      <Grid item xs={false} sm={4} md={7} className={classes.image}/>
+    <Grid container component="main"  className={classes.image}>
+      <Grid item xs={false} sm={4} md={7}/>
       <Grid component={Paper} square>
         <div className={classes.paper}>
         <img src="images/collabcal.png" />
           <Typography component="h1" variant="h5">
             Log in
           </Typography>
-          {/* <video autoPlay loop muted
-            style={{
-              position: "absolute",
-              width: "100%",
-              left: "50%",
-              top: "50%",
-              height: "100%",
-              objectFit: "cover",
-              transform: "translate(-50%, -50%)",
-              zIndex: "-1"
-            }}
-           >
-             <source src={Ink} type="video/mp4" />
-           </video> */}
           <form className={classes.form} noValidate>
             <TextField 
               className={classes.textfield}

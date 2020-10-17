@@ -22,11 +22,12 @@ export default function () {
     event.preventDefault();
     API.createEvent(values).then(results => {
       console.log(results)
-    });
+    }).catch((err) => {
+      console.log(err)
+    })
   }
 
   return (
-    <div class="col-md-4">
       <form>
         <div class="form-group">
           <label for="newEventTitle">Event Title</label>
@@ -39,12 +40,11 @@ export default function () {
         <div class="form-group">
           <label for="description">Description (optional)</label>
           <p></p>
-          <textarea type="text" name="description" onChange={handleInputChange} value={values.description} cols="74" id="description" />
+          <textarea type="text" name="description" onChange={handleInputChange} value={values.description}id="description" />
         </div>
         <button type="Create Event" onClick={handleSubmit} class="btn btn-primary">
           Submit
         </button>
       </form>
-    </div>
   );
 }
