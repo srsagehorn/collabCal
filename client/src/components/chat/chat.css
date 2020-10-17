@@ -34,11 +34,11 @@
 }
 
 .chat-form {
-  height: 10vh;
+  /* height: 10vh; */
   position: fixed;
   bottom: 0;
   background-color: rgb(24, 23, 23);
-  width: 100%;
+  /* width: 100%; */
   max-width: 728px;
   display: flex;
   font-size: 1.5rem;
@@ -121,4 +121,8 @@ li {
   height: 40px;
   border-radius: 50%;
   margin: 2px 5px;
+}
+
+#send {
+  height: 20px;
 }
