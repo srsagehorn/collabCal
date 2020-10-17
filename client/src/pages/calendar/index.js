@@ -26,7 +26,6 @@ export default function () {
   const [currentCal, setCal] = useState({
     currentCal: ""
   })
-  // API 'get' request from events table. store in array. pass array into the CAL tag below (as a prop?). 
 
   // call getCalendars route to get calendars user belongs to. 
   // set the returned calendars in the mycals state. 
@@ -44,16 +43,20 @@ export default function () {
     }
   }, [user]);
 
+  function handleChange(newcal) {
+    setCal({currentCal: newcal});
+    API.getEvents(currentCal).then(results => {
+      console.log(results)
+      // setEvents({events: results.data})
+    })
+  }
 
-//   handleCalendarChange() {
-// // api call using calendar name clicked on
-//   }
+
   return (
     <div>
       <Nav />
       <p>{mycals.cals.length}</p>
-      <Choosecal cals={mycals.cals} />
-
+      <Choosecal onClick={handleChange} cals={mycals.cals} />
       <div className="row">
         <Cal />
         <div className="col-md-4 pad">

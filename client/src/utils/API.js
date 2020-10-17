@@ -8,9 +8,9 @@ export default {
         return axios.post("/api/comment", newComment);
     },
 
-    getEvents: function(events) {
+    getEvents: function(group) {
         console.log("we made it here")
-        return axios.get("/api/calendar", events);
+        return axios.get("/api/calendar/" + group);
     },
 
     createGroup: function(group) {

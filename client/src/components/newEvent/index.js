@@ -6,7 +6,8 @@ export default function () {
 
   const [values, setValues] = useState({
     event: "",
-    eventDate: "",
+    eventStart: "",
+    eventEnd: "",
     description: "",
     CalendarId: 1
   })
