@@ -4,8 +4,7 @@
     "password": "root12345",
     "database": "calendar_db",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "use_env_variable": "mysql://o834bsu29thjd4kg:z6h1l998py7dr6zr@f2fbe0zvg9j8p9ng.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/c4u8hrab1kyka87p"
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
@@ -15,6 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "use_env_variable": "JAWSDB_URL"
   }
 }
