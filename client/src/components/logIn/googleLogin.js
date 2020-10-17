@@ -9,8 +9,8 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import axios from 'axios';
-import API from '../../utils/API';
+// import axios from 'axios';
+// import API from '../../utils/API';
 // import zIndex from '@material-ui/core/styles/zIndex';
 import { useHistory } from 'react-router-dom'
 // import Ink from '../video/ink.mp4';
@@ -69,7 +69,7 @@ export default function SignInSide() {
       <Grid item xs={false} sm={4} md={7} className={classes.image}/>
       <Grid component={Paper} square>
         <div className={classes.paper}>
-        <img src="images/collabcal.png" />
+        <img src="images/collabcal.png" alt="" />
           <Typography component="h1" variant="h5">
             Log in
           </Typography>

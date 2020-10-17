@@ -11,6 +11,9 @@ import { useUserContext } from '../../components/firebase/userContext'
 export default function () {
   const [user] = useUserContext()
   console.log(user);
+  if(user) {
+    console.log(user.uid)
+  }
   const [mycals, setMycals] = useState({
     cals: []
   }, [])
@@ -36,9 +39,9 @@ export default function () {
   return (
     <div>
       <Nav />
-      <div class="row">
+      <div className="row">
         <Cal />
-        <div class="col-md-4 pad">
+        <div className="col-md-4 pad">
         <NewEvent />
         <Chat />
         </div>

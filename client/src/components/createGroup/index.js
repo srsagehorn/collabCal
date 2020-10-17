@@ -33,13 +33,13 @@ export default function () {
 
   return (
     <main>
-      <form id="login" class="col-md-4 center">
-        <h1 class="textCenter">Create a Group</h1>
-        <div class="form-group">
+      <form id="login" className="col-md-4 center">
+        <h1 className="textCenter">Create a Group</h1>
+        <div className="form-group">
           <label for="exampleInputEmail1">Group Name</label>
           <input
             type="email"
-            class="form-control"
+            className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             name="group"
@@ -47,32 +47,32 @@ export default function () {
             value={values.group}
           />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <label for="exampleInputPassword1">Add members</label>
-          <div class="row">
-            <div class="col-md-10">
+          <div className="row">
+            <div className="col-md-10">
               <input
                 type="password"
-                class="form-control"
+                className="form-control"
                 id="exampleInputPassword1"
               />
             </div>
-            <div class="col-md-2">
-              <div class="add center">
-                <p id="plus" class="textCenter">
+            <div className="col-md-2">
+              <div className="add center">
+                <p id="plus" className="textCenter">
                   +
                 </p>
               </div>
             </div>
           </div>
         </div>
-        <div class="addedMembers"></div>
-        <div class="textCenter">
+        <div className="addedMembers"></div>
+        <div className="textCenter">
           <button
             type="submit"
             onClick={handleSubmit}
             id="createBtn"
-            class="btn center"
+            className="btn center"
           >
             Create Group
           </button>
