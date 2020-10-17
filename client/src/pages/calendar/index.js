@@ -3,7 +3,6 @@ import Cal from "../../components/calendar";
 import NewEvent from "../../components/newEvent";
 import Nav from "../../components/nav";
 import Chat from '../../components/chat'
-import ChatList from '../../components/chat/App'
 import API from '../../utils/API';
 // import firebase from '../firebase'
 import { useUserContext } from '../../components/firebase/userContext'
@@ -57,8 +56,7 @@ export default function () {
         <Cal />
         <div className="col-md-4 pad">
         <NewEvent />
-        <ChatList />
-        {/* <Chat /> */}
+        <Chat />
         </div>
       </div>
     </div>

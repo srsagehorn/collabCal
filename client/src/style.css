@@ -146,3 +146,11 @@ a {
 a:hover {
   color: white;
 }
+
+.sign-out {
+  color: red;
+}
+
+.sign-out:hover {
+  color: darkred;
+}
