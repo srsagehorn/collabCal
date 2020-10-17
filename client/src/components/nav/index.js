@@ -1,7 +1,7 @@
 import React from "react";
-// import SignOut from '../signout/signout'
 
-export default function () {
+export default function (user) {
+  console.log (user)
   return (
     <header>
       <div className="row">
@@ -10,7 +10,7 @@ export default function () {
         </div>
         <div className="userInfo col-md-2">
           <a href = "/calendar">
-          <p id="username">Jill Adams</p>
+  <p id="username">user.uid</p>
           </a>
           <div className="dropdown">
   <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

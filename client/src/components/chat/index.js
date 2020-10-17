@@ -61,11 +61,11 @@ function ChatRoom() {
       <div className="chat-main">
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
         <span ref={dummy}></span>
+      </div>
       <form className= "chat-form" onSubmit={sendMessage}>
         <input className="chat-input" value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="message" />
         <button className="chat-button" type="submit" disabled={!formValue}><img alt = "send icon" id = "send" src= "images/send.png"></img></button>
       </form>
-      </div>
     </div>)
 }
 
