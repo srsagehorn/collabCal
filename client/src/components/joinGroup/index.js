@@ -32,11 +32,8 @@ export default function () {
   }
 
   return (
-<<<<<<< HEAD
-=======
   <div>
-    <h1 className = "textCenter">Join a Group</h1>
->>>>>>> da502ac2d3655796fdfc9ac6324916ab384ef53d
+    {/* <h1 className = "textCenter">Join a Group</h1>
     <form id="login" className="col-md-4 center">
       <div className="form-group">
         <label for="exampleInputEmail1">Group Name</label>
@@ -50,9 +47,8 @@ export default function () {
           value={values.group}
         />
       </div>
-<<<<<<< HEAD
       <div className="form-group">
-        <label for="exampleInputPassword1">Add members</label>
+        <label htmlFor="exampleInputPassword1">Add members</label>
         <div className="row">
           <div className="col-md-10">
             <input
@@ -74,14 +70,12 @@ export default function () {
       <div className="textCenter">
         <button type="submit" onClick={handleSubmit} id="createBtn" className="btn center">
           Create Group
-=======
       <div className="textCenter">
         <button type="submit" onClick={handleSubmit} id="createBtn" className="btn center">
           Join Group
->>>>>>> da502ac2d3655796fdfc9ac6324916ab384ef53d
         </button>
       </div>
-    </form>
+    </form> */}
     </div>
   );
 }
