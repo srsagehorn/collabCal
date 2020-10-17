@@ -4,11 +4,11 @@ const Op = Sequelize.Op;
 
 module.exports = function(app) {
   // Get route for returning events of a specific Calendar
-  app.get('/api/calendar', function(req, res) {
+  app.get('/api/calendar/:group', function(req, res) {
     console.log("working")
     db.Calendar.findAll({
       where: {
-        id: req
+        group: req.params.group
       },
       include: [db.Event]
     })
@@ -101,6 +101,6 @@ module.exports = function(app) {
     })
       .then(function(dbEvent) {
         res.json(dbEvent);
-      });
+      }); 
   })
 };
