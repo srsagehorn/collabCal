@@ -13,7 +13,9 @@ export default function () {
     <header>
       <div className="row">
         <div className="col-md-10">
-          <p id="title">CollabCal</p>
+          <a href = "/calendar">
+        <p id = "title">CollabCal</p>
+        </a>
         </div>
         <div className="userInfo col-md-2">
           <a href = "/calendar">

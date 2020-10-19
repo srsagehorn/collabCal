@@ -30,7 +30,8 @@ function CalendarPage(props) {
 
 
   return (
-    <div className="App col-md-8">
+    <div className="col-md-8">
+      {/* <button onClick={handleSubmit}>Hello</button> */}
       <DnDCalendar
         defaultDate={moment().toDate()}
         defaultView="month"
