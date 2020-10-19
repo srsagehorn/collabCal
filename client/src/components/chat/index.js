@@ -58,9 +58,9 @@ function ChatRoom() {
 
   return (
     <div className="chat-app">
-      <header className="chat-header"><h3>Chat</h3></header>
+      <header className="chat-header"><h2>Chat</h2></header>
       <div className="chat-main">
-        {messages && messages.filter(message=>message.calendar == "nick").map(msg => <ChatMessage key={msg.id} message={msg} />)}
+        {messages && messages.filter(message=>message.calendar === "nick").map(msg => <ChatMessage key={msg.id} message={msg} />)}
         <span ref={dummy}></span>
       </div>
       <form className= "chat-form" onSubmit={sendMessage}>

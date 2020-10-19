@@ -8,7 +8,7 @@ import './style.css';
      return (
        <div className="center">
          <h2>Successfully Logged Out!</h2>
-         <Link to="/"><button>
+         <Link to="/"><button className = "btn  btn-primary">
            Return to Login
          </button>
          </Link>
