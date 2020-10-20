@@ -21,7 +21,7 @@ CREATE TABLE events
     endTime INT,
     allDay BOOLEAN,
     eventLocation VARCHAR(100)
-)
+);
 
 CREATE TABLE chat
 (
