@@ -24,42 +24,51 @@ const auth = firebase.auth();
 
 const useStyles = makeStyles((theme) => ({
   image: {
-    backgroundImage: 'url(https://www.nicepng.com/png/detail/4-45934_blue-smoke-effect-png-clip-art-stock.png)',
-    backgroundSize: 'fill',
-    height: '100vh'
+    
   },
   paper: {
-    margin: theme.spacing(8, 4),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    backgroundColor: "#0d1821",
+    color: "white"
   },
   form: {
     width: '100%',
     marginTop: theme.spacing(1),
+    color: "white"
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
-    backgroundColor: "#BFE6FF",
+    backgroundColor: " #6e8894",
     border: '1px solid black',
     borderRadius: 10
   },
+  label: {
+    color: "white"
+  },
   textfield: {
-    borderRadius: 20
+    borderRadius: .25,
+    color: "white"
+  },
+  logo: {
+    height: "40vh",
+    marginBottom: "100px"
   }
 }));
+
 
 export default function SignInSide() {
   const classes = useStyles();
 
   return (
     <Grid container component="main"  className={classes.image}>
-      <Grid item xs={false} sm={4} md={7}/>
+      <Grid item xs={false} sm={4} md={15}/>
       <Grid component={Paper} square>
         <div className={classes.paper}>
-        <img alt = "logo" src="images/collabcal.png" />
+        <img className={classes.logo} alt = "logo" src="images/collabcal.png" />
           <Typography component="h1" variant="h5">
-            Log in
+            Login
           </Typography>
           <form className={classes.form} noValidate>
             <TextField 
@@ -83,10 +92,6 @@ export default function SignInSide() {
               placeholder="Password"
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
             <Button
               type="submit"
               fullWidth
@@ -98,7 +103,7 @@ export default function SignInSide() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link href="/forgotpassword" variant="body2">
                   Forgot password?
                 </Link>
               </Grid>
@@ -126,7 +131,7 @@ export default function SignInSide() {
 }
 
 
-// var user = firebase.auth().currentUser;
+{/* var user = firebase.auth().currentUser; */}
 
 
 function SignIn() {
@@ -158,7 +163,8 @@ function SignIn() {
   //  }
   return (
     <>
-      <Button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</Button>
+    <img src="https://img.icons8.com/color/24/000000/google-logo.png"/>
+      <Button className="sign-in g-signin2" onClick={signInWithGoogle}>Sign in with Google</Button>
     </>
   )
 }

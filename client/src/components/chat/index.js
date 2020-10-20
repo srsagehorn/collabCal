@@ -5,10 +5,12 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
-
+// import { event } from '../newEvent'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import firebaseConfig from '../firebase'
+import calendar from '../../pages/calendar';
+// import e from 'express';
 
 //project-194166058685
 
@@ -30,8 +32,8 @@ export default function Chat(props) {
   );
 }
 
+
 function ChatRoom(props) {
-  console.log("asfdlkjsd", props.calendar)
   const dummy = useRef();
   const messagesRef = firestore.collection('channels');
   const query = messagesRef.orderBy('createdAt').limit(25);
@@ -51,7 +53,7 @@ function ChatRoom(props) {
       uid,
       photoURL
     })
-    console.log("this is " + e.name)
+
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }

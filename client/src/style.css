@@ -6,6 +6,7 @@ body {
   font-family: nobel, sans-serif !important;
   font-weight: 400;
   font-style: normal;
+  overflow-x: hidden !important;
 }
 
 h1 {
@@ -13,9 +14,10 @@ h1 {
 }
 
 #title {
-  font-size: 60px;
+  font-size: 70px;
   padding-left: 40px;
   padding-top: 20px;
+  color: #6e8894;
 }
 
 .userInfo {
@@ -76,6 +78,11 @@ h1 {
 }
 
 .center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#login {
   margin-left: auto;
   margin-right: auto;
 }
@@ -147,10 +154,42 @@ a:hover {
   color: white;
 }
 
+.nav-tabs {
+  margin-bottom: 20px;
+}
+
+.rbc-calendar {
+  padding-left: 40px;
+  padding-top: 30px;
+  margin-bottom: 40px;
+}
+
+.pad {
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-right: 50px;
+}
 .sign-out {
   color: red;
 }
 
 .sign-out:hover {
   color: darkred;
+}
+
+.rbc-today {
+  background-color: #6e8894;
+  color: black;
+}
+
+.rbc-btn-group button {
+  color: white;
+}
+
+.rbc-active {
+  color: black;
+}
+
+.alignRight {
+  text-align: right;
 }

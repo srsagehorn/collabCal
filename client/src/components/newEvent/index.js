@@ -40,25 +40,30 @@ export default function (props) {
   return (
       <form>
         <div className="form-group">
+          <h2 className = "textCenter">Create Event</h2>
           <label htmlFor="newEventTitle">Event Title</label>
           <input type="text" name="event" onChange={handleInputChange} value={values.event} className="form-control" id="newEventTitle" />
         </div>
-        <div className="form-group">
+        <div class = "row">
+        <div className="col-md-6 form-group">
           <label htmlFor="newEventDate">Start Date</label>
-          <input type="text" name="eventStart" onChange={handleInputChange} value={values.eventStart} className="form-control" id="newEventDate" />
+          <input placeholder = "MM-DD-YYYY" type="text" name="eventStart" onChange={handleInputChange} value={values.eventStart} className="form-control" id="newEventDate" />
         </div>
-        <div className="form-group">
+        <div className="col-md-6 form-group">
           <label htmlFor="newEventDate">End Date</label>
-          <input type="text" name="eventEnd" onChange={handleInputChange} value={values.eventEnd} className="form-control" id="newEventDate" />
+          <input placeholder = "MM-DD-YYYY"  type="text" name="eventEnd" onChange={handleInputChange} value={values.eventEnd} className="form-control" id="newEventDate" />
+        </div>
         </div>
         <div className="form-group">
           <label htmlFor="description">Description (optional)</label>
           <p></p>
           <textarea type="text" name="description" onChange={handleInputChange} value={values.description}id="description" />
         </div>
+        <div className = "alignRight">
         <button type="Create Event" onClick={handleSubmit} className="btn btn-primary">
           Submit
         </button>
+        </div>
       </form>
   );
 }
