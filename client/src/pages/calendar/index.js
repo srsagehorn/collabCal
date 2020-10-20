@@ -16,15 +16,14 @@ export default function () {
   const [events, setEvents] = useState({
     currentEvents: []
   })
-  const [currentCal, setCal] = useState({
-    currentCal: ""
-  })
+  const [displayName, setDisplayName] = useState(
+    "")
+  const [currentCal, setCal] = useState("")
   
   useEffect(() => {
     if(user) {
-      console.log(user)
+      setDisplayName(user.displayName)
       API.getCalendars(user.uid).then(results => {
-        console.log(results.data)
         setMycals(results.data)
       })
       .catch((err) => {
@@ -33,14 +32,18 @@ export default function () {
     }
   }, [user]);
 
-  function handleChange(newcal) {
-    setCal({currentCal: newcal});
-    getEvents()
+  const handleChange = (newcal) => {
+    setCal(newcal);
+    API.getEvents(newcal).then(results => {
+      setEvents({currentEvents: results.data})
+    })
+    .catch((err) => {
+      console.log(err)
+    })
   }
 
-  function getEvents() {
-    console.log(currentCal.currentCal)
-    API.getEvents(currentCal.currentCal).then(results => {
+  const getEvents = () => {
+    API.getEvents(currentCal).then(results => {
       setEvents({currentEvents: results.data})
     })
     .catch((err) => {
@@ -50,12 +53,12 @@ export default function () {
 
   return (
     <div>
-      <Nav name={user}/>
+      <Nav name={displayName}/>
       <Choosecal onClick={handleChange} cals={mycals} />
       <div className="row">
         <Cal events={events.currentEvents} />
         <div className="col-md-4 pad">
-        <NewEvent getEvents={getEvents} calendar={currentCal.currentCal}/>
+        <NewEvent getEvents={getEvents} calendar={currentCal}/>
         <Chat />
         </div>
       </div>

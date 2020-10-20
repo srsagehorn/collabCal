@@ -7,7 +7,6 @@ export default function (props) {
     const calsArray = props.cals  
     const handleChange = event => {
         event.preventDefault();
-        console.log(event.target.value)
         props.onClick(event.target.value)
 
       }

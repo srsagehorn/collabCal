@@ -9,8 +9,7 @@ import firebaseConfig from '../firebase'
 const auth = firebase.auth();
 
 export default function (props) {
-  // const [user] = useUserContext()
-  // console.log(props.name)
+  const [user, setUser] = useUserContext()
   return (
     <header>
       <div className="row">
@@ -19,7 +18,7 @@ export default function (props) {
         </div>
         <div className="userInfo col-md-2">
           <a href = "/calendar">
-          <p id="username">Jill Adams</p>
+          <p id="username">{props.name}</p>
           </a>
           <div className="dropdown">
   <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

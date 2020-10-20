@@ -7,8 +7,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 
 function CalendarPage(props) {
   let eventsArray = props.events
-  console.log(props.events)
-  let newEvents = eventsArray.map(event => ({ title: event.event, start: event.eventStart, end: event.eventEnd }))
+  let newEvents =eventsArray.length > 0 ? eventsArray.map(event => ({ title: event.event, start: event.eventStart, end: event.eventEnd })) : [];
   const localizer = momentLocalizer(moment);
   const DnDCalendar = withDragAndDrop(Calendar);
   const startDate = moment().toDate();
@@ -17,7 +16,6 @@ function CalendarPage(props) {
   const [start, setStart] = useState(startDate);
   const [end, setEnd] = useState(endDate);
   const [title, setTitle] = useState("Some title");
-  console.log(start, end);
 
   const onEventResize = (data) => {
     const { startDate, endDate } = data;
