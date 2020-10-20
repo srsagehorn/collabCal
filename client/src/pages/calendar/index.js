@@ -59,7 +59,7 @@ export default function () {
         <Cal events={events.currentEvents} />
         <div className="col-md-4 pad">
         <NewEvent getEvents={getEvents} calendar={currentCal}/>
-        <Chat />
+        <Chat calendar={currentCal}/>
         </div>
       </div>
     </div>
