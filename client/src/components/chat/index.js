@@ -17,19 +17,21 @@ const firestore = firebase.firestore();
 // const analytics = firebase.analytics();
 
 
-export default function Chat() {
+export default function Chat(props) {
+  const cal = props.calendar;
 
   // const [user] = useAuthState(auth);
 
   return (
     <div>
-      <ChatRoom />
+      <ChatRoom calendar={cal}/>
     </div>
       
   );
 }
 
-function ChatRoom() {
+function ChatRoom(props) {
+  console.log("asfdlkjsd", props.calendar)
   const dummy = useRef();
   const messagesRef = firestore.collection('channels');
   const query = messagesRef.orderBy('createdAt').limit(25);
@@ -41,32 +43,29 @@ function ChatRoom() {
 
   const sendMessage = async (e) => {
     e.preventDefault();
-
     const { uid, photoURL } = auth.currentUser;
-
     await messagesRef.add({
-      calendar: 'nick',
+      calendar: props.calendar,
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
       photoURL
     })
-
+    console.log("this is " + e.name)
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
-
   return (
     <div className="chat-app">
-      <header className="chat-header"><h3>Chat</h3></header>
+      <header className="chat-header"><h2>Chat</h2></header>
       <div className="chat-main">
-        {messages && messages.filter(message=>message.calendar == "nick").map(msg => <ChatMessage key={msg.id} message={msg} />)}
+        {messages && messages.filter(message=>message.calendar === props.calendar).map(msg => <ChatMessage key={msg.id} message={msg} />)}
         <span ref={dummy}></span>
+      </div>
       <form className= "chat-form" onSubmit={sendMessage}>
         <input className="chat-input" value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="message" />
         <button className="chat-button" type="submit" disabled={!formValue}><img alt = "send icon" id = "send" src= "images/send.png"></img></button>
       </form>
-      </div>
     </div>)
 }
 
