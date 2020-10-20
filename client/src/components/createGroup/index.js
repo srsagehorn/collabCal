@@ -6,7 +6,6 @@ import { useUserContext } from '../firebase/userContext'
 
 export default function () {
   const [user] = useUserContext()
-  console.log(user)
 
   const [values, setValues] = useState({
     group: "",
@@ -15,7 +14,6 @@ export default function () {
 
   const handleInputChange = event => {
     const {name, value} = event.target
-    console.log(user.uid);
     setValues({
       ...values, 
       [name]: value,
@@ -26,8 +24,6 @@ export default function () {
   const handleSubmit = (event) => {
     event.preventDefault();
     API.createGroup(values).then((results) => {
-      console.log(results);
-      
     }).catch((err) => {
       console.log(err)
     })
