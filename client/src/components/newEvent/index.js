@@ -50,11 +50,11 @@ export default function (props) {
         <div class = "row">
         <div className="col-md-6 form-group">
           <label htmlFor="newEventDate">Start Date</label>
-          <input type="text" name="eventStart" onChange={handleInputChange} value={values.eventStart} className="form-control" id="newEventDate" />
+          <input placeholder = "MM-DD-YY" type="text" name="eventStart" onChange={handleInputChange} value={values.eventStart} className="form-control" id="newEventDate" />
         </div>
         <div className="col-md-6 form-group">
           <label htmlFor="newEventDate">End Date</label>
-          <input type="text" name="eventEnd" onChange={handleInputChange} value={values.eventEnd} className="form-control" id="newEventDate" />
+          <input placeholder = "MM-DD-YY"  type="text" name="eventEnd" onChange={handleInputChange} value={values.eventEnd} className="form-control" id="newEventDate" />
         </div>
         </div>
         <div className="form-group">

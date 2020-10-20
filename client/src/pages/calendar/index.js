@@ -50,7 +50,6 @@ export default function () {
   return (
     <div>
       <Nav />
-      <p>{user ? mycals.length : "loading calendars..."}</p>
       <Choosecal onClick={handleChange} cals={mycals} />
       <div className="row">
         <Cal events={events.currentEvents} />
