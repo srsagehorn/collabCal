@@ -4,11 +4,12 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
 import { Link } from "react-router-dom";
-
+import { useUserContext } from '../firebase/userContext'
 import firebaseConfig from '../firebase'
 const auth = firebase.auth();
 
-export default function () {
+export default function (props) {
+  const [user, setUser] = useUserContext()
   return (
     <header>
       <div className="row">
@@ -19,7 +20,7 @@ export default function () {
         </div>
         <div className="userInfo col-md-2">
           <a href = "/calendar">
-          <p id="username">Jill Adams</p>
+          <p id="username">{props.name}</p>
           </a>
           <div className="dropdown">
   <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -28,6 +29,8 @@ export default function () {
   <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
     <a className="dropdown-item" href="/group">Create a Group</a>
     <a className="dropdown-item" href="/join">Join a Group</a>
+    <a className="dropdown-item" href="/calendar">Back to Calendars</a>
+    {/* Add the link to the sign up button here */}
     <a className="dropdown-item" href="/loggedout"><SignOut /></a>
   </div>
 </div>

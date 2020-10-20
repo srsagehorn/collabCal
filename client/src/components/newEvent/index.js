@@ -4,7 +4,6 @@ import API from '../../utils/API';
 
 export default function (props) {
   const cal = props.calendar;
-  console.log(cal)
   const [values, setValues] = useState({
     event: "",
     eventStart: "",
@@ -31,9 +30,7 @@ export default function (props) {
   
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(values)
     API.createEvent(values).then(results => {
-      console.log(results)
       props.getEvents()
     }).catch((err) => {
       console.log(err)
