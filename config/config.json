@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root12345",
+    "password": "MapleB0x",
     "database": "calendar_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

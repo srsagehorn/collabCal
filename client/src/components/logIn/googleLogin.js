@@ -63,12 +63,12 @@ export default function SignInSide() {
 
   return (
     <Grid container component="main"  className={classes.image}>
-      <Grid item xs={false} sm={4} md={7}/>
+      <Grid item xs={false} sm={4} md={15}/>
       <Grid component={Paper} square>
         <div className={classes.paper}>
         <img className={classes.logo} alt = "logo" src="images/collabcal.png" />
           <Typography component="h1" variant="h5">
-            Log in
+            Login
           </Typography>
           <form className={classes.form} noValidate>
             <TextField 
@@ -103,7 +103,7 @@ export default function SignInSide() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link href="/forgotpassword" variant="body2">
                   Forgot password?
                 </Link>
               </Grid>
@@ -163,7 +163,8 @@ function SignIn() {
   //  }
   return (
     <>
-        <Button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</Button>
-      </>
-    )
-  }
+    <img src="https://img.icons8.com/color/24/000000/google-logo.png"/>
+      <Button className="sign-in g-signin2" onClick={signInWithGoogle}>Sign in with Google</Button>
+    </>
+  )
+}
