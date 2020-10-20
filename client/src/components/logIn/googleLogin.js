@@ -163,15 +163,8 @@ function SignIn() {
   //  }
   return (
     <>
-<<<<<<< HEAD
     <img src="https://img.icons8.com/color/24/000000/google-logo.png"/>
       <Button className="sign-in g-signin2" onClick={signInWithGoogle}>Sign in with Google</Button>
     </>
   )
 }
-=======
-        <Button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</Button>
-      </>
-    )
-  }
->>>>>>> 8fd3e4a7faf57e26711ef17b97c6ad8ee9f93e91
