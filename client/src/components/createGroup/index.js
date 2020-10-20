@@ -42,7 +42,7 @@ export default function () {
           <input
             type="email"
             className="form-control"
-            id="exampleInputEmail1"
+            id="exampleInputEmail1" 
             aria-describedby="emailHelp"
             name="group"
             onChange={handleInputChange}

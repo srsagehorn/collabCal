@@ -5,10 +5,12 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
-
+// import { event } from '../newEvent'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import firebaseConfig from '../firebase'
+import calendar from '../../pages/calendar';
+// import e from 'express';
 
 //project-194166058685
 
@@ -29,7 +31,7 @@ export default function Chat() {
   );
 }
 
-function ChatRoom() {
+function ChatRoom(events) {
   const dummy = useRef();
   const messagesRef = firestore.collection('channels');
   const query = messagesRef.orderBy('createdAt').limit(25);
@@ -45,12 +47,14 @@ function ChatRoom() {
     const { uid, photoURL } = auth.currentUser;
 
     await messagesRef.add({
-      calendar: 'nick',
+      calendar: events,
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
       photoURL
     })
+
+    console.log("this is " + e.name)
 
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
@@ -60,7 +64,7 @@ function ChatRoom() {
     <div className="chat-app">
       <header className="chat-header"><h2>Chat</h2></header>
       <div className="chat-main">
-        {messages && messages.filter(message=>message.calendar === "nick").map(msg => <ChatMessage key={msg.id} message={msg} />)}
+        {messages && messages.filter(message=>message.calendar === events).map(msg => <ChatMessage key={msg.id} message={msg} />)}
         <span ref={dummy}></span>
       </div>
       <form className= "chat-form" onSubmit={sendMessage}>
