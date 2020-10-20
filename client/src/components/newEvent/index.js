@@ -4,7 +4,6 @@ import API from '../../utils/API';
 
 export default function (props) {
   const cal = props.calendar;
-  console.log(cal)
   const [values, setValues] = useState({
     event: "",
     eventStart: "",
@@ -31,9 +30,7 @@ export default function (props) {
   
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(values)
     API.createEvent(values).then(results => {
-      console.log(results)
       props.getEvents()
     }).catch((err) => {
       console.log(err)
@@ -50,11 +47,11 @@ export default function (props) {
         <div class = "row">
         <div className="col-md-6 form-group">
           <label htmlFor="newEventDate">Start Date</label>
-          <input type="text" name="eventStart" onChange={handleInputChange} value={values.eventStart} className="form-control" id="newEventDate" />
+          <input placeholder = "MM-DD-YYYY" type="text" name="eventStart" onChange={handleInputChange} value={values.eventStart} className="form-control" id="newEventDate" />
         </div>
         <div className="col-md-6 form-group">
           <label htmlFor="newEventDate">End Date</label>
-          <input type="text" name="eventEnd" onChange={handleInputChange} value={values.eventEnd} className="form-control" id="newEventDate" />
+          <input placeholder = "MM-DD-YYYY"  type="text" name="eventEnd" onChange={handleInputChange} value={values.eventEnd} className="form-control" id="newEventDate" />
         </div>
         </div>
         <div className="form-group">
