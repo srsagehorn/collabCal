@@ -163,7 +163,7 @@ function SignIn() {
   //  }
   return (
     <>
-      <Button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</Button>
-    </>
-  )
-}
+        <Button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</Button>
+      </>
+    )
+  }
